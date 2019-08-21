@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MasterCodeMobile.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="MasterCode"
+                
+                HorizontalOptions="Center" />
+            <Label Text="Login"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Entry Placeholder="Pseudo" PlaceholderColor="LightGray" VerticalOptions="Center" WidthRequest="75" TextColor="Black"/>
+            <Entry Placeholder="Password" PlaceholderColor="LightGray" VerticalOptions="Center" TextColor="Black"/>
+
+            <Button Text="Se connecter" BackgroundColor="#99ff5e"/>
+            <Button Text="Mot de passe oublié" />
+            <Button Text="S'inscrire" Clicked="Redirect_Clicked"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
