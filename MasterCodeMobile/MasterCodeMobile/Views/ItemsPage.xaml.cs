@@ -52,7 +52,7 @@ namespace MasterCodeMobile.Views
             {
                 await Navigation.PushAsync(new LoginPage());
             }*/
-            await Navigation.PushAsync(new InscriptionPage());
+            await Navigation.PushAsync(new ForumDetailPage());
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
