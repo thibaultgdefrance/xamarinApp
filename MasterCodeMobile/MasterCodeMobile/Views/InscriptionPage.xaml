@@ -7,20 +7,22 @@
              mc:Ignorable="d"
              x:Class="MasterCodeMobile.Views.InscriptionPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Image Source="iconeutilisateur.jpg" HorizontalOptions="Center"/>
-            <Button Text="+" BackgroundColor="#0099ff" TextColor="white" Margin="160,0"/>
-            <Label Text="veillez saisir les informations demandées"
-            HorizontalOptions="CenterAndExpand" />
-            
-            <Entry Placeholder="Nom" />
-            <Entry Placeholder="Prénom" />
-            <Entry Placeholder="Pseudo" />
-            <Entry Placeholder="Mot de passe" />
-            <Entry Placeholder="Confirmation mot de passe" />
-            <Entry Placeholder="adresse mail" />
-            <Button Text="s'incrire" />
+        <ScrollView>
+            <StackLayout>
+                <Image Source="iconeutilisateur.jpg" HorizontalOptions="Center"/>
+                <Button Text="+" BackgroundColor="#0099ff" TextColor="white" Margin="160,0"/>
+                <Label Text="veillez saisir les informations demandées"
+                HorizontalOptions="CenterAndExpand" />
 
-        </StackLayout>
+                <Entry Placeholder="Nom" />
+                <Entry Placeholder="Prénom" />
+                <Entry Placeholder="Pseudo" />
+                <Entry Placeholder="Mot de passe" />
+                <Entry Placeholder="Confirmation mot de passe" />
+                <Entry Placeholder="adresse mail" />
+                <Button Text="s'incrire" />
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
