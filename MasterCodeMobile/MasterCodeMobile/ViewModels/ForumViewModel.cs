@@ -11,14 +11,14 @@ namespace MasterCodeMobile.ViewModels
 {
     class ForumViewModel:BaseViewModel
     {
-        public ObservableCollection<Forum> Categories { get; set; }
-        public Command LoadCategoriesCommand { get; set; }
+        public ObservableCollection<Forum> Forums { get; set; }
+        public Command LoadForumsCommand { get; set; }
 
         public ForumViewModel()
         {
-            Title = "Liste des Categories";
+            Title = "Liste des forums";
             Forums = new ObservableCollection<Forum>();
-            LoadCategoriesCommand = new Forum(async () => await ExecuteLoadCategoriesCommand());
+            LoadForumsCommand = new Forum(async () => await ExecuteLoadForumsCommand());
 
             /*MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
@@ -37,11 +37,11 @@ namespace MasterCodeMobile.ViewModels
 
             try
             {
-                Categories.Clear();
-                var categories = await DataStore.GetCategoriesAsync(true);
-                foreach (var categorie in categories)
+                Forums.Clear();
+                var Forums = await DataStore.GetForumsAsync(true);
+                foreach (var forum in forums)
                 {
-                    Categories.Add(forum);
+                    Forums.Add(forum);
                 }
             }
             catch (Exception ex)

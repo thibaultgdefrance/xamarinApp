@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MasterCodeMobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +24,8 @@ namespace MasterCodeMobile.Views
             base.OnAppearing();
 
             //await Navigation.PushAsync(new ForumDetailPage());
-            if (viewModel.Categories.Count == 0)
-                viewModel.LoadCategoriesCommand.Execute(null);
+            if (viewModel.Forums.Count == 0)
+                viewModel.LoadForumsCommand.Execute(null);
         }
     }
 }
