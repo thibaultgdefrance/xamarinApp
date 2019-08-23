@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MasterCodeMobile.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,5 +12,11 @@ namespace MasterCodeMobile.Services
         Task<bool> DeleteItemAsync(string id);
         Task<T> GetItemAsync(string id);
         Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+
+        Task<IEnumerable<Categorie>> GetCategoriesAsync(bool forceRefresh = false);
+        Task<Categorie> GetCategorieAsync(string id);
+
+        Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false);
+        Task<Forum> GetForumAsync(string id);
     }
 }

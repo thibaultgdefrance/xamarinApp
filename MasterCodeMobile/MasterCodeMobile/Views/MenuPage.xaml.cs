@@ -22,8 +22,8 @@ namespace MasterCodeMobile.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Accueil" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="Categories" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="profil" },
+                new HomeMenuItem {Id = MenuItemType.ListeCategorie, Title="Categories" },
+                new HomeMenuItem {Id = MenuItemType.Profil, Title="profil" },
             };
 
             ListViewMenu.ItemsSource = menuItems;

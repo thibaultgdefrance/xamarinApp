@@ -36,6 +36,15 @@ namespace MasterCodeMobile.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.ListeCategorie:
+                        MenuPages.Add(id, new NavigationPage(new ListeCategoriesPage()));
+                        break;
+                    case (int)MenuItemType.Profil:
+                        MenuPages.Add(id, new NavigationPage(new ProfilPage()));
+                        break;
+                    case (int)MenuItemType.ListeForum:
+                        MenuPages.Add(id, new NavigationPage(new ListeForumsPage()));
+                        break;
                 }
             }
 

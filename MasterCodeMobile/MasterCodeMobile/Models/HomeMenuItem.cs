@@ -7,7 +7,10 @@ namespace MasterCodeMobile.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        ListeCategorie,
+        Profil,
+        ListeForum
     }
     public class HomeMenuItem
     {

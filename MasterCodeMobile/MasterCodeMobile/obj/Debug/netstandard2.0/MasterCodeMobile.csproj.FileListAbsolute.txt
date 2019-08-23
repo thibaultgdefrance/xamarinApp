@@ -19,5 +19,7 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\ob
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\InscriptionPage.xaml.g.cs
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\ProfilPage.xaml.g.cs
-C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.csprojAssemblyReference.cache
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\ForumDetailPage.xaml.g.cs
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\ListeCategoriesPage.xaml.g.cs
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.csprojAssemblyReference.cache
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\ListeForumsPage.xaml.g.cs

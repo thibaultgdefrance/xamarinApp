@@ -9,7 +9,8 @@ namespace MasterCodeMobile.Services
     public class MockDataStore : IDataStore<Item>
     {
         List<Item> items;
-
+        List<Categorie> categories;
+        List<Forum> forums;
         public MockDataStore()
         {
             items = new List<Item>();
@@ -62,5 +63,53 @@ namespace MasterCodeMobile.Services
         {
             return await Task.FromResult(items);
         }
+
+        public async Task<IEnumerable<Categorie>> GetCategoriesAsync(bool forceRefresh = false)
+        {
+            categories = new List<Categorie>();
+
+            var listeCategorie = new List<Categorie>
+            {
+                new Categorie {Id = Guid.NewGuid().ToString(),LibelleCategorie="C#"},
+                new Categorie {Id = Guid.NewGuid().ToString(),LibelleCategorie="Java"},
+                new Categorie {Id = Guid.NewGuid().ToString(),LibelleCategorie="C++"},
+            };
+
+            foreach (var item in listeCategorie)
+            {
+                categories.Add(item);
+            }
+            return await Task.FromResult(categories);
+        }
+
+        public async Task<Categorie> GetCategorieAsync(string id )
+        {
+            return await Task.FromResult(categories.FirstOrDefault(s=>s.Id==id));
+        }
+
+
+
+        public async Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false)
+        {
+            forums = new List<Forum>();
+
+            var listeForum = new List<Forum>
+            {
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="C#"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Java"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="C++"},
+            };
+
+            foreach (var item in listeForum)
+            {
+                forums.Add(item);
+            }
+            return await Task.FromResult(forums);
+        }
+        public async Task<Forum> GetForumAsync(string id)
+        {
+            return await Task.FromResult(forums.FirstOrDefault(s => s.Id == id));
+        }
+
     }
 }

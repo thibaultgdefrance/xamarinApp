@@ -112,7 +112,6 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "MasterCodeMobile.Android.dll" comes first in this list. */
 		"MasterCodeMobile.Android.dll",
 		"FormsViewGroup.dll",
-		"MasterCodeMobile.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",
@@ -157,6 +156,7 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"MasterCodeMobile.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};
