@@ -5726,6 +5726,9 @@ namespace MasterCodeMobile.Droid
 			// aapt resource value: 0x7F090056
 			public const int avd_show_password = 2131296342;
 			
+			// aapt resource value: 0x7F010002
+			public const int button_bg_round = 2130771970;
+			
 			// aapt resource value: 0x7F090057
 			public const int design_bottom_navigation_item_background = 2131296343;
 			
@@ -5744,8 +5747,8 @@ namespace MasterCodeMobile.Droid
 			// aapt resource value: 0x7F09005C
 			public const int design_snackbar_background = 2131296348;
 			
-			// aapt resource value: 0x7F010002
-			public const int iconeutilisateur = 2130771970;
+			// aapt resource value: 0x7F010003
+			public const int iconeutilisateur = 2130771971;
 			
 			// aapt resource value: 0x7F090055
 			public const int ic_audiotrack_dark = 2131296341;
@@ -6398,8 +6401,8 @@ namespace MasterCodeMobile.Droid
 			// aapt resource value: 0x7F090070
 			public const int tooltip_frame_light = 2131296368;
 			
-			// aapt resource value: 0x7F010003
-			public const int xamarin_logo = 2130771971;
+			// aapt resource value: 0x7F010004
+			public const int xamarin_logo = 2130771972;
 			
 			static Drawable()
 			{

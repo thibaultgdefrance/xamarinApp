@@ -6,23 +6,26 @@
              mc:Ignorable="d"
              x:Class="MasterCodeMobile.Views.ListeForumsPage">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
+            <Label Text="Forums" HorizontalOptions="Center" FontSize="Large"/>
             <ListView x:Name="CategoriesListeView"
-                      ItemsSource="{Binding Forumss}"
+                      ItemsSource="{Binding Forums}"
                       HasUnevenRows="True"
                       RefreshCommand="{Binding LoadForumsCommand}"
                       IsPullToRefreshEnabled="True"
                       IsRefreshing="{Binding IsBusy,Mode=OneWay}"
                       CachingStrategy="RecycleElement">
-
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
+                                <StackLayout BackgroundColor="#99ff5e">
+                                
                                 <Label Text="{Binding Sujet}"
                                        LineBreakMode="NoWrap"
                                        Style="{DynamicResource ListItemStyle}"
-                                       FontSize="40"
+                                       FontSize="30"
+                                       Margin="0,20"
                                        
                                        HorizontalOptions="Center">
 
@@ -33,5 +36,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -35,7 +35,12 @@
                 <Entry Placeholder="" Text="EmailUtilisateur"/>
 
                 <Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white"/>
-                
+
+
+                <Button Text="Round Button"
+                     ImageSource="@drawable/button_bg_round"
+                  
+                     />
 
             </StackLayout>
         </ScrollView>

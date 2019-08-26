@@ -12,7 +12,8 @@ namespace MasterCodeMobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-       
+        string pseudo = "titi";
+        string mdp="admin";
         public LoginPage()
         {
             InitializeComponent();
@@ -22,12 +23,27 @@ namespace MasterCodeMobile.Views
 
 
         }
+        public void Connexion_Clicked(object sender, EventArgs e)
+        {
+            
+            if (pseudo == PseudoConnexion.Text && mdp==MDPConnexion.Text)
+            {
+                Navigation.PushAsync(new ListeForumsPage());
+            }
+            else
+            {
+                    
+            }
+                
+            
+            
 
+        }
         public void Redirect_Clicked(object sender, EventArgs e)
         {
              Navigation.PushAsync(new InscriptionPage());
         }
-
+        
 
 
     }

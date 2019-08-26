@@ -14,14 +14,14 @@
                 <Label Text="veillez saisir les informations demandées"
                 HorizontalOptions="CenterAndExpand" />
 
-                <Entry Placeholder="Nom" />
-                <Entry Placeholder="Prénom" />
-                <Entry Placeholder="Pseudo" />
-                <Entry Placeholder="Mot de passe" />
-                <Entry Placeholder="Confirmation mot de passe" />
-                <Entry Placeholder="adresse mail" />
-                <Button Text="s'incrire" />
-
+                <Entry Placeholder="Nom" x:Name="InscriptionNom"/>
+                <Entry Placeholder="Prénom" x:Name="InscriptionPreNom"/>
+                <Entry Placeholder="Pseudo" x:Name="InscriptionPseudo"/>
+                <Entry Placeholder="Mot de passe" IsPassword="True" x:Name="InscriptionMDP"/>
+                <Entry Placeholder="Confirmation mot de passe" IsPassword="True" x:Name="InscriptionVerifMDP" />
+                <Entry Placeholder="adresse mail" x:Name="InscriptionMail"/>
+                <Button Text="s'incrire" x:Name="InscriptionValider"/>
+                   
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -11,6 +11,7 @@ namespace MasterCodeMobile.Services
         List<Item> items;
         List<Categorie> categories;
         List<Forum> forums;
+        //List<Commentaire> commentaires; 
         public MockDataStore()
         {
             items = new List<Item>();
@@ -95,9 +96,18 @@ namespace MasterCodeMobile.Services
 
             var listeForum = new List<Forum>
             {
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="C#"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Java"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="C++"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Je suis nul en Xamarin"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Le c# c'est l'enfer"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Mort aux SJW"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Je suis nul en Xamarin"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Le c# c'est l'enfer"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Mort aux SJW"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Je suis nul en Xamarin"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Le c# c'est l'enfer"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Mort aux SJW"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Je suis nul en Xamarin"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Le c# c'est l'enfer"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Mort aux SJW"},
             };
 
             foreach (var item in listeForum)
@@ -106,6 +116,11 @@ namespace MasterCodeMobile.Services
             }
             return await Task.FromResult(forums);
         }
+
+        /*public async Task<IEnumerable<Forum>> GetDetailsAsync(bool forceRefresh = false)
+        {
+          commentaire = new List<Commentaire>
+        }*/
         public async Task<Forum> GetForumAsync(string id)
         {
             return await Task.FromResult(forums.FirstOrDefault(s => s.Id == id));
