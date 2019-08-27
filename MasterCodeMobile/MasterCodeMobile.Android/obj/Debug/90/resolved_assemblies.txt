@@ -4,6 +4,7 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.An
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\MasterCodeMobile.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Mono.Android.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\mscorlib.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Core.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Numerics.dll

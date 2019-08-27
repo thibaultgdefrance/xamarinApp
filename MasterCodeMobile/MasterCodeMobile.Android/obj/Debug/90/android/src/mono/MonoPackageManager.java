@@ -113,6 +113,7 @@ class MonoPackageManager_Resources {
 		"MasterCodeMobile.Android.dll",
 		"FormsViewGroup.dll",
 		"MasterCodeMobile.dll",
+		"Newtonsoft.Json.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

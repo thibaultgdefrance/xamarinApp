@@ -12,7 +12,6 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\ob
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.csproj.CoreCompileInputs.cache
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.AssemblyInfoInputs.cache
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.AssemblyInfo.cs
-C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\ref\MasterCodeMobile.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.pdb
@@ -22,4 +21,10 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\ob
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\ForumDetailPage.xaml.g.cs
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\ListeCategoriesPage.xaml.g.cs
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\ListeForumsPage.xaml.g.cs
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\bin\Debug\netstandard2.0\Cryptage.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\bin\Debug\netstandard2.0\Cryptage2.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\bin\Debug\netstandard2.0\Cryptage.pdb
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\bin\Debug\netstandard2.0\Cryptage2.pdb
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.csprojAssemblyReference.cache
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.csproj.CopyComplete

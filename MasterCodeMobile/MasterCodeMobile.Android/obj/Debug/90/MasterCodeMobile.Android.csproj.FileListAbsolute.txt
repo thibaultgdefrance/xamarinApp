@@ -521,4 +521,5 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.An
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\res\drawable\iconeutilisateur.jpg
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\res\drawable\button_bg_round.xml
-C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Runtime.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\linksrc\Newtonsoft.Json.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
