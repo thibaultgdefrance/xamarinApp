@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Cryptage2;
 using MasterCodeMobile.Models;
 
 namespace MasterCodeMobile.Services
@@ -11,6 +13,7 @@ namespace MasterCodeMobile.Services
         List<Item> items;
         List<Categorie> categories;
         List<Forum> forums;
+        ClefDeCryptage2 clef = new ClefDeCryptage2();
         //List<Commentaire> commentaires; 
         public MockDataStore()
         {
@@ -82,6 +85,20 @@ namespace MasterCodeMobile.Services
             }
             return await Task.FromResult(categories);
         }
+
+
+        public async void Connexion(string email,string motDePasse)
+        {
+            string token = clef.create();
+            
+            var httpClient = new HttpClient();
+            var reponse = await httpClient.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Utilisateurs?token="+token+"&Email="+email+"&mdp="+motDePasse+"");
+
+            
+
+
+        }
+
 
         public async Task<Categorie> GetCategorieAsync(string id )
         {

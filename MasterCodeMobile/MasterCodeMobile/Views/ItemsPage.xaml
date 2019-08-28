@@ -46,11 +46,15 @@
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
+                            
                         </StackLayout>
                     </ViewCell>
+                    
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Label x:Name="LabelEmail" />
+        <Label x:Name="Labelmdp" />
     </StackLayout>
     
 </ContentPage>

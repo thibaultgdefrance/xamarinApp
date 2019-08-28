@@ -23,10 +23,16 @@ namespace MasterCodeMobile.Views
         public ItemsPage()
         {
             InitializeComponent();
-
+            
             BindingContext = viewModel = new ItemsViewModel();
         }
-
+        public ItemsPage(Utilisateur utilisateur)
+        {
+            InitializeComponent();
+            LabelEmail.Text = utilisateur.Email;
+            Labelmdp.Text = utilisateur.MotDePasse;
+            BindingContext = viewModel = new ItemsViewModel();
+        }
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as Item;

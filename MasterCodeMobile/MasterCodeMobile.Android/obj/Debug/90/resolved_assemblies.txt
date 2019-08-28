@@ -65,4 +65,5 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.An
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Runtime.Serialization.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.ServiceModel.Internals.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Web.Services.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Cryptage2.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Mono.Security.dll
