@@ -4,21 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace MasterCodeMobile.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     
     public partial class LoginPage : ContentPage
     {
         Utilisateur Utilisateur { get; set; }
-        string pseudo = "titi";
-        string mdp="admin";
+       
         ClefDeCryptage2 clef = new ClefDeCryptage2();
         public LoginPage()
         {
@@ -30,12 +29,20 @@ namespace MasterCodeMobile.Views
 
 
         }
-        public async void Connexion_Clicked(object sender, EventArgs e)
+        public void Connexion_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "ConnectUtilisateur", Utilisateur);
-            await Navigation.PushAsync(new ItemsPage(Utilisateur));
-                
+            
+            MessagingCenter.Send(this, "Connexion", Utilisateur);
+            if (Application.Current.Properties.ContainsKey("Email"))
+            {
+                infoConnexion.Text = Application.Current.Properties["Email"].ToString();
 
+            }
+            else
+            {
+                infoConnexion.Text = "Le mot de passe ou l'email sont éronés";
+            }
+           
         }
         public void Redirect_Clicked(object sender, EventArgs e)
         {

@@ -12,7 +12,7 @@ namespace MasterCodeMobile.Models
         public string DatePublication { get; set; }
         public string MotsClef { get; set; }
         public string Popularite { get; set; }
-        public string IdCategorie{ get; set; }
+        public string IdCategorie { get; set; }
         public string IdStatut { get; set; }
         public string IdAcces { get; set; }
         public string IdLangue { get; set; }

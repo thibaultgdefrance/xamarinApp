@@ -19,18 +19,23 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                                <StackLayout BackgroundColor="#99ff5e">
-                                
-                                <Label Text="{Binding Sujet}"
-                                       LineBreakMode="NoWrap"
-                                       Style="{DynamicResource ListItemStyle}"
-                                       FontSize="30"
-                                       Margin="0,20"
-                                       
-                                       HorizontalOptions="Center">
+                                <StackLayout BackgroundColor="Gray">
+                                    <StackLayout BackgroundColor="#99ff5e" Margin="1" >
 
-                                </Label>
-                            </StackLayout>
+                                        <Label Text="{Binding Sujet}"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemStyle}"
+                                    FontSize="30"
+                                    Margin="0,20"
+                                       
+                                    HorizontalOptions="Center">
+
+                                        </Label>
+
+
+                                    </StackLayout>
+                                </StackLayout>
+                                
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

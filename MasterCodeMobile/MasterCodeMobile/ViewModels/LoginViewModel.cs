@@ -1,35 +1,37 @@
 ﻿using MasterCodeMobile.Models;
+using MasterCodeMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace MasterCodeMobile.ViewModels
 {
-    public class LoginViewModel:BaseViewModel
+    public class LoginViewModel : BaseViewModel
     {
-        public async Task<bool> LoginUtilisateur(Utilisateur utilisateur,bool forceRefresh = false)
-        {
-            string login = utilisateur.Email;
-            string motdepasse = utilisateur.MotDePasse;
-            HttpClient htc= new HttpClient();
+        Utilisateur Utilisateur { get; set; }
+        public LoginViewModel(){
+                Utilisateur = new Utilisateur {
+                Email = "",
+                MotDePasse = ""
 
-            try
-            {
-                var ApiResponse = await htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Utilisateurs?Email="+login+"&mdp="+motdepasse+"");
-                if (ApiResponse.Contains("IdUtilisateur"))
-                {
-                    Application.Current.Properties["login"] = login;
-                    Application.Current.Properties["motdepasse"] = motdepasse;
-                }
-            }catch(Exception)
-            {
+            };
 
-            }
-            return await Task.FromResult(true);
+            MessagingCenter.Subscribe<LoginPage, Utilisateur>(this, "Connexion", async (obj, user) =>
+                   {
+                       var _User = user as Utilisateur;
+                       Utilisateur = _User;
+                       await DataStore.Login(_User);
+                   }
+
+            );
+           
         }
-        
+        public ICommand OpenWebCommand { get; }
+       
+
     }
 }

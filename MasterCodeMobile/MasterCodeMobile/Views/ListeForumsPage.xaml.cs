@@ -27,5 +27,6 @@ namespace MasterCodeMobile.Views
             if (viewModel.Forums.Count == 0)
                 viewModel.LoadForumsCommand.Execute(null);
         }
+        
     }
 }

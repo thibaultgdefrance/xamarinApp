@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using Cryptage2;
 using MasterCodeMobile.Models;
+using Xamarin.Forms;
 
 namespace MasterCodeMobile.Services
 {
@@ -87,7 +90,7 @@ namespace MasterCodeMobile.Services
         }
 
 
-        public async void Connexion(string email,string motDePasse)
+        /*public async void Connexion(string email,string motDePasse)
         {
             string token = clef.create();
             
@@ -97,7 +100,7 @@ namespace MasterCodeMobile.Services
             
 
 
-        }
+        }*/
 
 
         public async Task<Categorie> GetCategorieAsync(string id )
@@ -113,18 +116,18 @@ namespace MasterCodeMobile.Services
 
             var listeForum = new List<Forum>
             {
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Je suis nul en Xamarin"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Le c# c'est l'enfer"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Mort aux SJW"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Je suis nul en Xamarin"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Le c# c'est l'enfer"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Mort aux SJW"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Je suis nul en Xamarin"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Le c# c'est l'enfer"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Mort aux SJW"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Je suis nul en Xamarin"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Le c# c'est l'enfer"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="Mort aux SJW"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
+                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "}
+
+
             };
 
             foreach (var item in listeForum)
@@ -142,6 +145,73 @@ namespace MasterCodeMobile.Services
         {
             return await Task.FromResult(forums.FirstOrDefault(s => s.Id == id));
         }
+        public async Task<bool> Login(Utilisateur utilisateur,bool forcedRefresh = false)
+        {
+            string email = utilisateur.Email;
+            string pass = "7523c62abdb7628c5a9dad8f97d8d8c5c040ede36535e531a8";
+            try
+            {
+               /* SHA256 sha256Hash = SHA256.Create();
+               
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(pass));
 
+
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+
+
+
+
+
+
+                string token = clef.create();
+                
+
+
+                pass = builder.ToString();*/
+                //string pass = "7523c62abdb7628c5a9dad8f97d8d8c5c040ede36535e531a8";
+                HttpClient htc = new HttpClient();
+                var ConnexionReponse = await htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Utilisateurs?&Email=" + email + "&mdp=" + pass + "");
+                if (ConnexionReponse.Contains("404"))
+                {
+                    Application.Current.Properties["Email"] = "Le mot de passe ou l'email sont éronés";
+                }
+                else
+                {
+                    Application.Current.Properties["Email"]=email;
+                    
+                }
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return await Task.FromResult(true);
+        }
+
+
+        public  async void GetForumsAsync()
+        {
+            List<Forum> forums;
+            HttpClient htc = new HttpClient();
+            try
+            {
+                var ConnexionReponse = await  htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Fora");
+               
+
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+            
+
+        }
     }
 }
