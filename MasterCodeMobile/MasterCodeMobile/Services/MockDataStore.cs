@@ -112,28 +112,28 @@ namespace MasterCodeMobile.Services
 
         public async Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false)
         {
+            
             forums = new List<Forum>();
+            HttpClient htc = new HttpClient();
+            var token = clef.create();
+            var reponse = await htc.GetStringAsync("http://10.115.145.48/api/Forums?token="+token+"");
+            // string[] result =  reponse.Split(',');
 
-            var listeForum = new List<Forum>
+            Forum forum = new Forum();
+            forum.Sujet = reponse;
+            forums.Add(forum);
+
+            /*foreach (var item in result)
             {
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet=" Xamarin"},
-                new Forum {Id = Guid.NewGuid().ToString(),Sujet="c# "}
 
-
-            };
-
-            foreach (var item in listeForum)
-            {
-                forums.Add(item);
-            }
+                Forum forum = new Forum();
+                if (item.ToString()!= null)
+                {
+                    string sujet=item.Replace("Sujet:", "");
+                    forum.Sujet = sujet;
+                    forums.Add(forum);
+                }
+            }*/
             return await Task.FromResult(forums);
         }
 
@@ -148,10 +148,10 @@ namespace MasterCodeMobile.Services
         public async Task<bool> Login(Utilisateur utilisateur,bool forcedRefresh = false)
         {
             string email = utilisateur.Email;
-            string pass = "7523c62abdb7628c5a9dad8f97d8d8c5c040ede36535e531a8";
+            string pass = utilisateur.MotDePasse;
             try
             {
-               /* SHA256 sha256Hash = SHA256.Create();
+                /*SHA256 sha256Hash = SHA256.Create();
                
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(pass));
 
@@ -160,21 +160,17 @@ namespace MasterCodeMobile.Services
                 for (int i = 0; i < bytes.Length; i++)
                 {
                     builder.Append(bytes[i].ToString("x2"));
-                }
-
-
-
-
+                }*/
 
 
                 string token = clef.create();
                 
 
 
-                pass = builder.ToString();*/
-                //string pass = "7523c62abdb7628c5a9dad8f97d8d8c5c040ede36535e531a8";
+                /*pass = builder.ToString();*/
+                
                 HttpClient htc = new HttpClient();
-                var ConnexionReponse = await htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Utilisateurs?&Email=" + email + "&mdp=" + pass + "");
+                var ConnexionReponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?token="+token+"&pseudo="+email+"&mdp="+pass+"");
                 if (ConnexionReponse.Contains("404"))
                 {
                     Application.Current.Properties["Email"] = "Le mot de passe ou l'email sont éronés";
@@ -182,7 +178,6 @@ namespace MasterCodeMobile.Services
                 else
                 {
                     Application.Current.Properties["Email"]=email;
-                    
                 }
 
             }
@@ -195,20 +190,17 @@ namespace MasterCodeMobile.Services
         }
 
 
-        public  async void GetForumsAsync()
+        public async void GetForumsAsync()
         {
             List<Forum> forums;
             HttpClient htc = new HttpClient();
             try
             {
-                var ConnexionReponse = await  htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Fora");
-               
-
-            }
+                var ConnexionReponse = await htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Fora");
+            }               
             catch (Exception)
             {
-                
-                
+              
             }
             
 

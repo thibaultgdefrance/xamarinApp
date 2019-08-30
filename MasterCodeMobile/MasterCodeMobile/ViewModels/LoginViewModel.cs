@@ -14,11 +14,11 @@ namespace MasterCodeMobile.ViewModels
     {
         Utilisateur Utilisateur { get; set; }
         public LoginViewModel(){
-                Utilisateur = new Utilisateur {
+               /* Utilisateur = new Utilisateur {
                 Email = "",
                 MotDePasse = ""
 
-            };
+                };
 
             MessagingCenter.Subscribe<LoginPage, Utilisateur>(this, "Connexion", async (obj, user) =>
                    {
@@ -27,7 +27,7 @@ namespace MasterCodeMobile.ViewModels
                        await DataStore.Login(_User);
                    }
 
-            );
+            );*/
            
         }
         public ICommand OpenWebCommand { get; }

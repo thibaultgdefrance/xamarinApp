@@ -16,14 +16,17 @@ namespace MasterCodeMobile.Views
     
     public partial class LoginPage : ContentPage
     {
-        Utilisateur Utilisateur { get; set; }
+        public Utilisateur Utilisateur { get; set; }
        
         ClefDeCryptage2 clef = new ClefDeCryptage2();
         public LoginPage()
         {
             InitializeComponent();
 
-            Utilisateur Utilisateur = new Utilisateur();
+            Utilisateur = new Utilisateur {
+                Email="toto",
+                MotDePasse = ""
+            };
             BindingContext = this;
 
 
@@ -31,12 +34,13 @@ namespace MasterCodeMobile.Views
         }
         public void Connexion_Clicked(object sender, EventArgs e)
         {
-            
+           
             MessagingCenter.Send(this, "Connexion", Utilisateur);
+
             if (Application.Current.Properties.ContainsKey("Email"))
             {
                 infoConnexion.Text = Application.Current.Properties["Email"].ToString();
-
+                Navigation.PushAsync(new ListeForumsPage());
             }
             else
             {
