@@ -19,19 +19,21 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                                <StackLayout BackgroundColor="Gray">
-                                    <StackLayout BackgroundColor="#99ff5e" Margin="1" >
+                                <StackLayout>
+                                    <StackLayout  BackgroundColor="#99ff5e" Margin="2" >
 
                                         <Label Text="{Binding Sujet}"
                                     LineBreakMode="NoWrap"
                                     Style="{DynamicResource ListItemStyle}"
-                                    FontSize="30"
+                                    FontSize="20"
                                     Margin="0,20"
                                        
                                     HorizontalOptions="Center">
 
                                         </Label>
+                                        <Label Text="{Binding DatePublication}" TextColor="Blue" FontSize="Small" HorizontalOptions="Center">
 
+                                        </Label>
 
                                     </StackLayout>
                                 </StackLayout>

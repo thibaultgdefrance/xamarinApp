@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Cryptage2;
 using MasterCodeMobile.Models;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 
 namespace MasterCodeMobile.Services
@@ -17,6 +18,7 @@ namespace MasterCodeMobile.Services
         List<Categorie> categories;
         List<Forum> forums;
         ClefDeCryptage2 clef = new ClefDeCryptage2();
+        HttpClient htc = new HttpClient();
         //List<Commentaire> commentaires; 
         public MockDataStore()
         {
@@ -105,25 +107,24 @@ namespace MasterCodeMobile.Services
 
         public async Task<Categorie> GetCategorieAsync(string id )
         {
+
             return await Task.FromResult(categories.FirstOrDefault(s=>s.Id==id));
         }
 
 
 
-        public async Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false)
+        /*public async Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false)
         {
             
             forums = new List<Forum>();
             HttpClient htc = new HttpClient();
             var token = clef.create();
-            var reponse = await htc.GetStringAsync("http://10.115.145.48/api/Forums?token="+token+"");
-            // string[] result =  reponse.Split(',');
+            string reponse = await htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Fora");
+            string[] result =  reponse.Split(',');
 
-            Forum forum = new Forum();
-            forum.Sujet = reponse;
-            forums.Add(forum);
+            
 
-            /*foreach (var item in result)
+            foreach (var item in result)
             {
 
                 Forum forum = new Forum();
@@ -133,10 +134,19 @@ namespace MasterCodeMobile.Services
                     forum.Sujet = sujet;
                     forums.Add(forum);
                 }
-            }*/
+            }
+            return await Task.FromResult(forums);
+        }*/
+        public async Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false)
+        {
+            
+            //string reponse = await htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Fora");
+            string reponse = await htc.GetStringAsync("http://10.115.145.48/api/forums");
+            Forum forum = new Forum();
+            List<Forum> forums = JsonConvert.DeserializeObject<List<Forum>>(reponse);
+            
             return await Task.FromResult(forums);
         }
-
         /*public async Task<IEnumerable<Forum>> GetDetailsAsync(bool forceRefresh = false)
         {
           commentaire = new List<Commentaire>
