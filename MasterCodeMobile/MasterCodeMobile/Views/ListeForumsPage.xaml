@@ -15,14 +15,15 @@
                       RefreshCommand="{Binding LoadForumsCommand}"
                       IsPullToRefreshEnabled="True"
                       IsRefreshing="{Binding IsBusy,Mode=OneWay}"
-                      CachingStrategy="RecycleElement">
+                      CachingStrategy="RecycleElement"
+                      ItemSelected="GetForumDetailAsync">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                                 <StackLayout>
-                                    <StackLayout  BackgroundColor="#99ff5e" Margin="2" >
+                                    <StackLayout x:Name="{binding id}" BackgroundColor="#99ff5e" Margin="2" >
 
-                                        <Label Text="{Binding Sujet}"
+                                        <Label   Text="{Binding Sujet}"
                                     LineBreakMode="NoWrap"
                                     Style="{DynamicResource ListItemStyle}"
                                     FontSize="20"

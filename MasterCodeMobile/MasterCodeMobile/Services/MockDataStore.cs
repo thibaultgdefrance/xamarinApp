@@ -16,6 +16,7 @@ namespace MasterCodeMobile.Services
     {
         List<Item> items;
         List<Categorie> categories;
+        public List<Message> messages;
         List<Forum> forums;
         ClefDeCryptage2 clef = new ClefDeCryptage2();
         HttpClient htc = new HttpClient();
@@ -90,19 +91,9 @@ namespace MasterCodeMobile.Services
             }
             return await Task.FromResult(categories);
         }
+        
 
-
-        /*public async void Connexion(string email,string motDePasse)
-        {
-            string token = clef.create();
-            
-            var httpClient = new HttpClient();
-            var reponse = await httpClient.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Utilisateurs?token="+token+"&Email="+email+"&mdp="+motDePasse+"");
-
-            
-
-
-        }*/
+        
 
 
         public async Task<Categorie> GetCategorieAsync(string id )
@@ -137,19 +128,36 @@ namespace MasterCodeMobile.Services
             }
             return await Task.FromResult(forums);
         }*/
+        public  async Task<IEnumerable<Message>> GetForumDetailAsync(string idforum, bool forcedRefresh = false)
+        {
+           
+            HttpClient htcT = new HttpClient();
+            string idf = idforum.Replace("\"", "");
+            string req = "http://10.115.145.48/api/Messages?idForum="+idf;
+            var reponse = await htcT.GetStringAsync(req);
+
+
+            messages = JsonConvert.DeserializeObject<List<Message>>(reponse);
+            
+
+          
+
+            return messages.AsEnumerable();
+        }
+
         public async Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false)
         {
             
             //string reponse = await htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Fora");
-            string reponse = await htc.GetStringAsync("http://10.115.145.48/api/forums");
+            string reponse = await htc.GetStringAsync("http://10.115.145.48/api/Forums");
             Forum forum = new Forum();
             List<Forum> forums = JsonConvert.DeserializeObject<List<Forum>>(reponse);
             
             return await Task.FromResult(forums);
         }
-        /*public async Task<IEnumerable<Forum>> GetDetailsAsync(bool forceRefresh = false)
+        /*public async Task<IEnumerable<Forum>> GetForumDetailsAsync(bool forceRefresh = false)
         {
-          commentaire = new List<Commentaire>
+          
         }*/
         public async Task<Forum> GetForumAsync(string id)
         {

@@ -58,7 +58,7 @@ namespace MasterCodeMobile.Views
             {
                 await Navigation.PushAsync(new LoginPage());
             }*/
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new ListeForumsPage());
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }

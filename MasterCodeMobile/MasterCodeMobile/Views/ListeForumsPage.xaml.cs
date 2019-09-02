@@ -1,4 +1,5 @@
-﻿using MasterCodeMobile.ViewModels;
+﻿using MasterCodeMobile.Models;
+using MasterCodeMobile.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,19 @@ namespace MasterCodeMobile.Views
             InitializeComponent();
             BindingContext = viewModel = new ForumViewModel();
         }
+        async public void GetForumDetailAsync(object sender, SelectedItemChangedEventArgs args)
+        {
+            var item = args.SelectedItem as Forum;
+            if (item == null)
+                return;
+
+            await Navigation.PushAsync(new ForumDetailPage(new ForumDetailViewModels(item)));
+
+           
+          
+
+
+        }
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -27,6 +41,7 @@ namespace MasterCodeMobile.Views
             if (viewModel.Forums.Count == 0)
                 viewModel.LoadForumsCommand.Execute(null);
         }
+
         
     }
 }

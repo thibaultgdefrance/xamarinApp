@@ -8,6 +8,20 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+               
+                <ListView ItemsSource="{Binding Messages}"
+                 SelectedItem="{Binding YourSelectedItem, Mode=TwoWay}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding Texte}"></Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                       
+                            
+                             
+                </ListView>
                 <Label Text="Titre du Forum" FontSize="Large" HorizontalOptions="Center" Margin="0,50"/>
                 
                 <ScrollView>

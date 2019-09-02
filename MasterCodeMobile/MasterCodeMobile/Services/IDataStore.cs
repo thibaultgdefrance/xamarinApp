@@ -19,5 +19,7 @@ namespace MasterCodeMobile.Services
         Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false);
         Task<Forum> GetForumAsync(string id);
         Task<bool> Login(Utilisateur utilisateur, bool forcedRefresh = false);
+
+        Task<IEnumerable<Message>> GetForumDetailAsync(string idforum,bool forcedRefresh = false);
     }
 }
