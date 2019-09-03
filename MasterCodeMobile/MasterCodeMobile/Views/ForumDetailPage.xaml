@@ -8,26 +8,41 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-               
-                <ListView ItemsSource="{Binding Messages}"
-                 SelectedItem="{Binding YourSelectedItem, Mode=TwoWay}" >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Label Text="{Binding Texte}"></Label>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                       
-                            
-                             
-                </ListView>
-                <Label Text="Titre du Forum" FontSize="Large" HorizontalOptions="Center" Margin="0,50"/>
                 
-                <ScrollView>
-                    <Label  HorizontalOptions="Center" FontSize="Large" HeightRequest="300" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." Margin="40,0" />
-                </ScrollView>
-                <Entry  Placeholder="Ajouter un commentaire" VerticalOptions="EndAndExpand"></Entry>
+                <Grid BackgroundColor="white"  RowSpacing="20" HeightRequest="600">
+
+
+                    <Label Text="Titre du forum"  Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center"/>
+                    <ListView ItemsSource="{Binding Messages}"
+                 SelectedItem="{Binding YourSelectedItem, Mode=TwoWay}"   Grid.Row="1" Grid.ColumnSpan="2">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="{Binding Texte}"></Label>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+
+
+                    </ListView>
+
+
+
+                    <Entry  Placeholder="Ajouter un commentaire" VerticalOptions="EndAndExpand"  Grid.Row="2"></Entry>
+                    <Button Grid.Column="1" Grid.Row="2" Text="OK" Clicked="PostMessageAsync"></Button>
+                    <Grid.RowDefinitions>
+                        
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

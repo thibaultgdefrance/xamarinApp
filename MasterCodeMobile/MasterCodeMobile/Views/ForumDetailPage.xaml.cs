@@ -38,5 +38,10 @@ namespace MasterCodeMobile.Views
             base.OnAppearing();
             viewModels.LoadMessagesCommand.Execute(null);
         }
+
+        async public void PostMessageAsync()
+        {
+
+        }
     }
 }

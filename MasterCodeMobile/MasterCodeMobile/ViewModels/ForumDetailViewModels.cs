@@ -24,7 +24,7 @@ namespace MasterCodeMobile.ViewModels
             Forum = forum;
             Messages = new ObservableCollection<Message>();
             LoadMessagesCommand = new Command(async () => await ExecuteLoadMessagesCommand());
-
+            //ExecuteLoadForumsCommand = new Command(async () => await ExecuteLoadForumCommand());
         }
         async Task ExecuteLoadMessagesCommand()
         {
@@ -53,5 +53,36 @@ namespace MasterCodeMobile.ViewModels
                 IsBusy = false;
             }
         }
+
+       /* async Task ExecuteLoadForumCommand()
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+            try
+            {
+                Forum.Clear();
+                var forums = await DataStore.GetForumAsync(true);
+
+
+                foreach (var forum in forums)
+                {
+                    Forums.Add(forum);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }*/
+
+
+
     }
 }

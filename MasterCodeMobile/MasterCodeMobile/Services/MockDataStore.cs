@@ -223,5 +223,13 @@ namespace MasterCodeMobile.Services
             
 
         }
+
+        public async void PostMessageAsync(string token,string IdForum,string IdAuteur, string Texte)
+        {
+            token = clef.create();
+            Message message = new Message();
+            HttpClient htc = new HttpClient();
+            var reponse = await htc.GetStringAsync("api/Messages?token="+token+"&IdForumSelectionne="+IdForum+"&idAuteur="+IdAuteur+"&texteMessage="+Texte);
+        }
     }
 }
