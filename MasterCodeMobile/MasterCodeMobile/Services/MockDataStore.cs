@@ -228,8 +228,16 @@ namespace MasterCodeMobile.Services
         {
             token = clef.create();
             Message message = new Message();
+            message.IdAuteur = IdAuteur;
+            message.IdForum = IdForum;
+            message.Texte = Texte;
+            message.IdStatut = "1";
+            message.Popularite = "0";
+            message.IdMessageParent = null;
+            message.DatePublication = (DateTime.Now).ToLongDateString();
             HttpClient htc = new HttpClient();
-            var reponse = await htc.GetStringAsync("api/Messages?token="+token+"&IdForumSelectionne="+IdForum+"&idAuteur="+IdAuteur+"&texteMessage="+Texte);
+
+            HttpResponseMessage reponse= await htc.PostAsync("api/Messages?token="+token+"&IdForumSelectionne="+IdForum+"&idAuteur="+IdAuteur+"&texteMessage="+Texte,null);
         }
     }
 }

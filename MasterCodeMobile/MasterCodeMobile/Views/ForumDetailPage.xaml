@@ -19,7 +19,11 @@
                             <DataTemplate>
                                 <ViewCell>
                                     <Label Text="{Binding Texte}"></Label>
+                                    
+
                                 </ViewCell>
+                                
+                                   
                             </DataTemplate>
                         </ListView.ItemTemplate>
 
@@ -29,7 +33,7 @@
 
 
 
-                    <Entry  Placeholder="Ajouter un commentaire" VerticalOptions="EndAndExpand"  Grid.Row="2"></Entry>
+                    <Entry  Placeholder="Ajouter un commentaire" VerticalOptions="EndAndExpand"  Grid.Row="2" x:Name="commentaire"></Entry>
                     <Button Grid.Column="1" Grid.Row="2" Text="OK" Clicked="PostMessageAsync"></Button>
                     <Grid.RowDefinitions>
                         

@@ -54,35 +54,35 @@ namespace MasterCodeMobile.ViewModels
             }
         }
 
-       /* async Task ExecuteLoadForumCommand()
-        {
-            if (IsBusy)
-                return;
+        /* async Task ExecuteLoadForumCommand()
+         {
+             if (IsBusy)
+                 return;
 
-            IsBusy = true;
+             IsBusy = true;
 
-            try
-            {
-                Forum.Clear();
-                var forums = await DataStore.GetForumAsync(true);
-
-
-                foreach (var forum in forums)
-                {
-                    Forums.Add(forum);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }*/
+             try
+             {
+                 Forum.Clear();
+                 var forums = await DataStore.GetForumAsync(true);
 
 
+                 foreach (var forum in forums)
+                 {
+                     Forums.Add(forum);
+                 }
+             }
+             catch (Exception ex)
+             {
+                 Debug.WriteLine(ex);
+             }
+             finally
+             {
+                 IsBusy = false;
+             }
+         }*/
+
+        
 
     }
 }

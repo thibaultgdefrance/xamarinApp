@@ -39,9 +39,20 @@ namespace MasterCodeMobile.Views
             viewModels.LoadMessagesCommand.Execute(null);
         }
 
-        async public void PostMessageAsync()
+        public void PostMessageAsync(Object sender ,EventArgs e)
         {
-
+            if (commentaire.Text != "")
+            {
+                
+                commentaire.Placeholder = "Commentaire ajouté";
+                commentaire.PlaceholderColor = Color.LimeGreen;
+                commentaire.Text = "";
+            }
+            else
+            {
+                commentaire.PlaceholderColor = Color.Red;
+                commentaire.Placeholder = "Le Commentaire doit etre valide";
+            }
         }
     }
 }
