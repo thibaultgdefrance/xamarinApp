@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -133,6 +134,7 @@ namespace MasterCodeMobile.Services
            
             HttpClient htcT = new HttpClient();
             string idf = idforum.Replace("\"", "");
+            Application.Current.Properties["IdForum"] = idforum;
             string req = "http://10.115.145.48/api/Messages?idForum="+idf;
             var reponse = await htcT.GetStringAsync(req);
 
@@ -228,21 +230,40 @@ namespace MasterCodeMobile.Services
 
         public async Task<Message> PostMessageAsync(Message message, string token)
         {
+            Message message2 = new Message();
             //token = clef.create();
-            /*
-            message.IdAuteur = IdAuteur;
+            //message.Id= Guid.NewGuid().ToString();
+            /*message.IdAuteur = IdAuteur;
             message.IdForum = IdForum;
             message.Texte = Texte;*/
             //string IdAuteur = "1";//Application.Current.Properties["IdAuteur"].ToString();
             //string IdForum = message.IdForum ;
             //string Texte = message.Texte;
-            //message.IdStatut = "1";
-            //message.Popularite = "0";
-            //message.IdMessageParent = null;
-            //message.DatePublication = (DateTime.Now).ToLongDateString();
+            /*message2.Id = Guid.NewGuid().ToString();
+            message2.IdForum = "1";
+            message2.IdMessage="";
+            message2.IdMessageParent = "1";
+            message2.IdStatut = "1";
+            message2.Popularite = "1";
+            message2.Texte = "ioiioiioioioii";
+            var contenu2 = new StringContent(JsonConvert.SerializeObject(message2));*/
+            
+            /*message.IdStatut = "1";
+            message.Popularite = "0";
+            message.IdMessageParent = null;
+            message.DatePublication = (DateTime.Now).ToLongDateString();*/
             HttpClient htc = new HttpClient();
-            var contenu = new StringContent(JsonConvert.SerializeObject(message));
-            HttpResponseMessage reponse= await htc.PostAsync("http://10.115.145.48/api/Messages?token="+token+"&IdForumSelectionne="+message.IdForum+"&idAuteur="+message.IdAuteur+"&texteMessage="+message.Texte,contenu);
+            var json = JsonConvert.SerializeObject(message);
+            var contenu = new StringContent(json,Encoding.UTF8, "application/json");
+            //contenu.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            //HttpResponseMessage reponse= await htc.PostAsync("http://10.115.145.48/api/Messages?token="+token+"&IdForumSelectionne="+message.IdForum+"&idAuteur="+message.IdAuteur+"&texteMessage="+message.Texte,contenu);
+
+
+            HttpResponseMessage reponse = await htc.PostAsync("http://10.115.145.48/api/Messages",contenu);
+
+           
+
             return await Task.FromResult(message);
         }
     }

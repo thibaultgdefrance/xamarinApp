@@ -46,11 +46,11 @@ namespace MasterCodeMobile.Views
             Message message = new Message();
             message.Texte = commentaire.Text;
             message.IdAuteur = "1";
-            message.IdForum = Forum.IdForum;
+            message.IdForum = Application.Current.Properties["IdForum"].ToString();
             message.DatePublication = DateTime.Now.ToLongDateString();
             message.IdMessageParent = null;
             message.IdStatut = "1";
-            message.Id = Guid.NewGuid().ToString();
+            //message.Id = Guid.NewGuid().ToString();
             if (commentaire.Text != null)
             {
                 MessagingCenter.Send(this, "Ajout", message);

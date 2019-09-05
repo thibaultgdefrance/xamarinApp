@@ -55,7 +55,7 @@ namespace MasterCodeMobile.ViewModels
                 
                 
                 await DataStore.PostMessageAsync(message,token);
-                messages.Add(message);
+                //messages.Add(message);
             }
 
            );
