@@ -17,11 +17,17 @@
                  SelectedItem="{Binding YourSelectedItem, Mode=TwoWay}"   Grid.Row="1" Grid.ColumnSpan="2">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell>
-                                    <Label Text="{Binding Texte}"></Label>
-                                    
-
+                                <ViewCell >
+                                    <ViewCell.View>
+                                        <StackLayout >
+                                            <Label Text="{Binding Texte}" ></Label>
+                                            <Label Text="{Binding DatePublication}" TextColor="LightGray" FontSize="Small" />
+                                        </StackLayout>
+                                   
+                                    </ViewCell.View>
                                 </ViewCell>
+                                
+                                    
                                 
                                    
                             </DataTemplate>
@@ -34,7 +40,7 @@
 
 
                     <Entry  Placeholder="Ajouter un commentaire" VerticalOptions="EndAndExpand"  Grid.Row="2" x:Name="commentaire"></Entry>
-                    <Button Grid.Column="1" Grid.Row="2" Text="OK" Clicked="PostMessageAsync"></Button>
+                    <Button Grid.Column="1" Grid.Row="2" Text="OK" Clicked="PostMessagesAsync"></Button>
                     <Grid.RowDefinitions>
                         
                         <RowDefinition Height="100"/>

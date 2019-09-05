@@ -5,6 +5,8 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.An
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Mono.Android.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\mscorlib.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Rg.Plugins.Popup.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Rg.Plugins.Popup.Droid.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Core.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Numerics.dll
@@ -66,4 +68,13 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.An
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.ServiceModel.Internals.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Web.Services.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Cryptage2.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Runtime.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Threading.Tasks.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Collections.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Diagnostics.Debug.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Reflection.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Threading.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Runtime.Extensions.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Reflection.Extensions.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\System.Linq.dll
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\android\assets\Mono.Security.dll

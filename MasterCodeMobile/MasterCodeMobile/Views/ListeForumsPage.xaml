@@ -21,7 +21,7 @@
                     <DataTemplate>
                         <ViewCell>
                                 <StackLayout>
-                                    <StackLayout x:Name="{binding id}" BackgroundColor="#99ff5e" Margin="2" >
+                                    <StackLayout x:Name="{binding id}" BackgroundColor="#99ff5e">
 
                                         <Label   Text="{Binding Sujet}"
                                     LineBreakMode="NoWrap"

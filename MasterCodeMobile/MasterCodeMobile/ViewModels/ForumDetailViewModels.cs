@@ -1,4 +1,7 @@
-﻿using MasterCodeMobile.Models;
+﻿using Cryptage;
+using Cryptage2;
+using MasterCodeMobile.Models;
+using MasterCodeMobile.Views;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -18,6 +21,11 @@ namespace MasterCodeMobile.ViewModels
         public Forum Forum { get; set; }
         public Command LoadMessagesCommand { get; set; }
         public List<Message> messages { get; set; }
+        public Message message { get; set; }
+
+        public ClefDeCryptage2 clef = new ClefDeCryptage2();
+
+        public Utilisateur Utilisateur { get; set; }
         
         public ForumDetailViewModels(Forum forum = null)
         {
@@ -82,7 +90,24 @@ namespace MasterCodeMobile.ViewModels
              }
          }*/
 
+
+        /*public void posterMessage()
+        {
+            MessagingCenter.Subscribe<ForumDetailPage, Message>(this, "Ajout", async ( obj, item) =>
+                    {
+                        string token = clef.create();
+                        var _message = item as Message;
+                        message.IdForum = Forum.IdForum;
+                        Utilisateur.IdUtilisateur = Application.Current.Properties["IdUtilisateur"].ToString();
+                        //message.IdForum = "1";
+                        //Utilisateur.IdUtilisateur = "1";
+                        message.IdAuteur = Utilisateur.IdUtilisateur; 
+                        message = _message;
+                        messages.Add(message);
+                        await DataStore.PostMessageAsync(message, token);
+                    });
+        }*/
         
 
+        }
     }
-}

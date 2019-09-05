@@ -18,12 +18,14 @@ namespace MasterCodeMobile.Views
     {
         HttpClient htc = new HttpClient();
         Forum Forum { get; set; }
+        //Message message { get; set; }
 
         ForumDetailViewModels viewModels;
         public ForumDetailPage()
         {
             InitializeComponent();
             Forum = new Forum();
+            
             List<Message> messages = new List<Message>();
         }
         public ForumDetailPage(ForumDetailViewModels viewModel)
@@ -39,11 +41,21 @@ namespace MasterCodeMobile.Views
             viewModels.LoadMessagesCommand.Execute(null);
         }
 
-        public void PostMessageAsync(Object sender ,EventArgs e)
+        public void PostMessagesAsync(Object sender ,EventArgs e)
         {
-            if (commentaire.Text != "")
+            Message message = new Message();
+            message.Texte = commentaire.Text;
+            message.IdAuteur = "1";
+            message.IdForum = Forum.IdForum;
+            message.DatePublication = DateTime.Now.ToLongDateString();
+            message.IdMessageParent = null;
+            message.IdStatut = "1";
+            message.Id = Guid.NewGuid().ToString();
+            if (commentaire.Text != null)
             {
-                
+                MessagingCenter.Send(this, "Ajout", message);
+
+         
                 commentaire.Placeholder = "Commentaire ajouté";
                 commentaire.PlaceholderColor = Color.LimeGreen;
                 commentaire.Text = "";
@@ -53,6 +65,8 @@ namespace MasterCodeMobile.Views
                 commentaire.PlaceholderColor = Color.Red;
                 commentaire.Placeholder = "Le Commentaire doit etre valide";
             }
+
+
         }
     }
 }

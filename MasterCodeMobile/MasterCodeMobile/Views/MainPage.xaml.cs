@@ -60,5 +60,10 @@ namespace MasterCodeMobile.Views
                 IsPresented = false;
             }
         }
+        /*async protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            
+        }*/
     }
 }

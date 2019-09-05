@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MasterCodeMobile.Views.TestProgressBarPage">
+  <ContentView.Content>
+      <StackLayout>
+            <Entry Placeholder="nom" HorizontalOptions="Center" x:Name="nom"/>
+            <Entry Placeholder="prenom"  HorizontalOptions="Center" x:Name="prenom"/>
+            <Entry Placeholder="email"  HorizontalOptions="Center"  x:Name="email"/>
+            <Entry Placeholder="mot de passe"  HorizontalOptions="Center" x:Name="mdp" />
+            <Entry Placeholder="verification mot de passe"  HorizontalOptions="Center" x:Name="verifmdp"/>
+            <ProgressBar ProgressColor="Orange" Progress="0" VerticalOptions="End" x:Name="chargement3"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

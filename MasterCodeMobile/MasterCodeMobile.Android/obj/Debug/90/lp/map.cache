@@ -1,6 +1,8 @@
 FormsViewGroup
 MasterCodeMobile
 Newtonsoft.Json
+Rg.Plugins.Popup
+Rg.Plugins.Popup.Droid
 System.Runtime
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
@@ -48,3 +50,4 @@ Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
 Cryptage2
+System.Reflection.Extensions

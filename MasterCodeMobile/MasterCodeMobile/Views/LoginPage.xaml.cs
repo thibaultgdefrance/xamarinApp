@@ -22,9 +22,10 @@ namespace MasterCodeMobile.Views
         public LoginPage()
         {
             InitializeComponent();
-
+            chargement2.ProgressTo(1, 9000, Easing.Linear);
+            
             Utilisateur = new Utilisateur {
-                Email="toto",
+                Email="",
                 MotDePasse = ""
             };
             BindingContext = this;
@@ -52,8 +53,36 @@ namespace MasterCodeMobile.Views
         {
              Navigation.PushAsync(new InscriptionPage());
         }
-        
 
+        async protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            /*var chargement = new ProgressBar {
+                Progress = 0.1,
+                ProgressColor = Color.LimeGreen,
+                WidthRequest = 300,
+                HeightRequest = 20
+            };
+            await chargement.ProgressTo(1, 9000, Easing.Linear);
+            await chargement2.ProgressTo(1 , 9000, Easing.Linear);*/
+            if (EmailConnexion.Text!="")
+            {
+                chargement2.Progress += 0.5;
+            }
+            else
+            {
+                chargement2.Progress -= 0.5;
+            }
+            if (MDPConnexion.Text != "")
+            {
+                chargement2.Progress += 0.5;
+            }
+            else
+            {
+                chargement2.Progress -= 0.5;
+            }
+
+        }
 
     }
 }

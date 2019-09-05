@@ -17,11 +17,15 @@
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png"/>
                 </OnPlatform>
+                
+                
             </NavigationPage.Icon>
             <x:Arguments>
                 <views:ItemsPage />
+                <!--<ProgressBar x:Name="chargement" Progress="0.1" WidthRequest="*"/>-->
             </x:Arguments>
         </NavigationPage>
+        
     </MasterDetailPage.Detail>
     
 </MasterDetailPage>

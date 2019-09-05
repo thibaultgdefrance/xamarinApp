@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "7bfeef4566192931564e624b4efaf6bab385791a"
+    "signature": "2d87ccf2d528bef515e732de16a08f7cb60c1083"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,6 +11,7 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3-beta1",
+          "Rg.Plugins.Popup": "1.1.5.188",
           "Xamarin.Essentials": "1.1.0",
           "Xamarin.Forms": "4.0.0.425677",
           "Cryptage": "1.0.0.0",
@@ -31,6 +32,17 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.3.23619"
+          }
+        }
+      },
+      "Rg.Plugins.Popup/1.1.5.188": {
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.425677"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Rg.Plugins.Popup.dll": {
+            "assemblyVersion": "1.1.5.188",
+            "fileVersion": "1.1.5.188"
           }
         }
       },
@@ -113,6 +125,13 @@
       "sha512": "sha512-dvGx3CT9tEs9LbgyIw9MZl+sLCFa6yx1NXLKaldRk+N9BgToJpCK2PUv8z2aNbLq6ljtLS93X5gamWxs8DhdRA==",
       "path": "newtonsoft.json/12.0.3-beta1",
       "hashPath": "newtonsoft.json.12.0.3-beta1.nupkg.sha512"
+    },
+    "Rg.Plugins.Popup/1.1.5.188": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PE7uHJ/LuI5pSO1HpgjJ+v2KhNfftzqt/L1AoGH/5mX0fP7pcW6lG4FbUHuCFKolrzJfLLotuuET+hfN50Whpg==",
+      "path": "rg.plugins.popup/1.1.5.188",
+      "hashPath": "rg.plugins.popup.1.1.5.188.nupkg.sha512"
     },
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",

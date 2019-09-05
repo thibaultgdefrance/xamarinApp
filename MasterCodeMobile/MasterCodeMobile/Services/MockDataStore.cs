@@ -166,6 +166,7 @@ namespace MasterCodeMobile.Services
         public async Task<bool> Login(Utilisateur utilisateur,bool forcedRefresh = false)
         {
             string email = utilisateur.Email;
+            string IdUtilisateur = utilisateur.IdUtilisateur;
             string pass = utilisateur.MotDePasse;
             try
             {
@@ -196,6 +197,7 @@ namespace MasterCodeMobile.Services
                 else
                 {
                     Application.Current.Properties["Email"]=email;
+                    Application.Current.Properties["IdUtilisateur"] = IdUtilisateur;
                 }
 
             }
@@ -224,20 +226,24 @@ namespace MasterCodeMobile.Services
 
         }
 
-        public async void PostMessageAsync(string token,string IdForum,string IdAuteur, string Texte)
+        public async Task<Message> PostMessageAsync(Message message, string token)
         {
-            token = clef.create();
-            Message message = new Message();
+            //token = clef.create();
+            /*
             message.IdAuteur = IdAuteur;
             message.IdForum = IdForum;
-            message.Texte = Texte;
+            message.Texte = Texte;*/
+            string IdAuteur = "1";//Application.Current.Properties["IdAuteur"].ToString();
+            string IdForum = message.IdForum ;
+            string Texte = message.Texte;
             message.IdStatut = "1";
             message.Popularite = "0";
             message.IdMessageParent = null;
             message.DatePublication = (DateTime.Now).ToLongDateString();
             HttpClient htc = new HttpClient();
 
-            HttpResponseMessage reponse= await htc.PostAsync("api/Messages?token="+token+"&IdForumSelectionne="+IdForum+"&idAuteur="+IdAuteur+"&texteMessage="+Texte,null);
+            HttpResponseMessage reponse= await htc.PostAsync("http://10.115.145.48/api/Messages?token=" + token+"&IdForumSelectionne="+IdForum+"&idAuteur="+IdAuteur+"&texteMessage="+Texte,null);
+            return await Task.FromResult(message);
         }
     }
 }

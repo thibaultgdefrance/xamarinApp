@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using MasterCodeMobile.Models;
 using MasterCodeMobile.Views;
 using System.Collections.Generic;
+using Cryptage2;
 
 namespace MasterCodeMobile.ViewModels
 {
@@ -16,8 +17,14 @@ namespace MasterCodeMobile.ViewModels
         public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
         public Utilisateur Utilisateur;
-        public List<Forum> Forum;
+        public List<Forum> Forums;
+        public Forum Forum { get; set; }
+        public Message message { get; set; }
+        public List<Message> messages { get; set; }
+        public ClefDeCryptage2 clef = new ClefDeCryptage2();
+
         public ItemsViewModel()
+        
         {
             Title = "Browse";
             Items = new ObservableCollection<Item>();
@@ -34,6 +41,20 @@ namespace MasterCodeMobile.ViewModels
                 var _User = user as Utilisateur;
                 Utilisateur = _User;
                 await DataStore.Login(_User);
+            });
+
+
+            MessagingCenter.Subscribe<ForumDetailPage, Message>(this, "Ajout", async (obj, item) =>
+            {
+                string token = clef.create();
+                var _message = item as Message;
+                message = _message;
+                //Utilisateur.IdUtilisateur = Application.Current.Properties["IdUtilisateur"].ToString();
+                //message.IdForum = "1";
+                
+                
+                //messages.Add(message);
+                await DataStore.PostMessageAsync(message, token);
             }
 
            );

@@ -58,3 +58,9 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iO
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iOS\obj\iPhoneSimulator\Debug\MasterCodeMobile.iOS.csproj.CopyComplete
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iOS\obj\iPhoneSimulator\Debug\MasterCodeMobile.iOS.exe
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iOS\obj\iPhoneSimulator\Debug\MasterCodeMobile.iOS.pdb
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.IOS.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.IOS.pdb
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.pdb
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iOS\bin\iPhoneSimulator\Debug\Cryptage2.dll
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.iOS\bin\iPhoneSimulator\Debug\Cryptage2.pdb
