@@ -53,8 +53,9 @@ namespace MasterCodeMobile.ViewModels
                 //message.IdForum = "1";
                 
                 
-                //messages.Add(message);
-                await DataStore.PostMessageAsync(message, token);
+                
+                await DataStore.PostMessageAsync(message,token);
+                messages.Add(message);
             }
 
            );

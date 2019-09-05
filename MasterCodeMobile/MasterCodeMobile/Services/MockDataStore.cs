@@ -233,16 +233,16 @@ namespace MasterCodeMobile.Services
             message.IdAuteur = IdAuteur;
             message.IdForum = IdForum;
             message.Texte = Texte;*/
-            string IdAuteur = "1";//Application.Current.Properties["IdAuteur"].ToString();
-            string IdForum = message.IdForum ;
-            string Texte = message.Texte;
-            message.IdStatut = "1";
-            message.Popularite = "0";
-            message.IdMessageParent = null;
-            message.DatePublication = (DateTime.Now).ToLongDateString();
+            //string IdAuteur = "1";//Application.Current.Properties["IdAuteur"].ToString();
+            //string IdForum = message.IdForum ;
+            //string Texte = message.Texte;
+            //message.IdStatut = "1";
+            //message.Popularite = "0";
+            //message.IdMessageParent = null;
+            //message.DatePublication = (DateTime.Now).ToLongDateString();
             HttpClient htc = new HttpClient();
-
-            HttpResponseMessage reponse= await htc.PostAsync("http://10.115.145.48/api/Messages?token=" + token+"&IdForumSelectionne="+IdForum+"&idAuteur="+IdAuteur+"&texteMessage="+Texte,null);
+            var contenu = new StringContent(JsonConvert.SerializeObject(message));
+            HttpResponseMessage reponse= await htc.PostAsync("http://10.115.145.48/api/Messages?token="+token+"&IdForumSelectionne="+message.IdForum+"&idAuteur="+message.IdAuteur+"&texteMessage="+message.Texte,contenu);
             return await Task.FromResult(message);
         }
     }
