@@ -26,7 +26,7 @@
 
 
                 <Label Text="Pseudo" />
-                <Entry  Placeholder="" Text="PseudoDeLutilisateur"/>
+                <Entry  x:Name="PseudoDeLutilisateur"  Placeholder="" Text="PseudoDeLutilisateur"/>
                 <Label Text="mot de passe" />
                 <Entry Placeholder="" Text="MotDepasseDeLutilisateur"/>
                 <Label Text="confirmation mot de passe" />

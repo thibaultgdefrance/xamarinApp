@@ -22,6 +22,7 @@ namespace MasterCodeMobile.Services
         List<Forum> forums;
         ClefDeCryptage2 clef = new ClefDeCryptage2();
         HttpClient htc = new HttpClient();
+        
         //List<Commentaire> commentaires; 
         public MockDataStore()
         {
@@ -232,7 +233,7 @@ namespace MasterCodeMobile.Services
 
         public async Task<Message> PostMessageAsync(Message message, string token)
         {
-            Message message2 = new Message();
+           //Message message2 = new Message();
             //token = clef.create();
             //message.Id= Guid.NewGuid().ToString();
             /*message.IdAuteur = IdAuteur;
@@ -268,5 +269,16 @@ namespace MasterCodeMobile.Services
 
             return await Task.FromResult(message);
         }
+
+        public async Task<Utilisateur> GetProfil(string idUtilisateur)
+        {
+
+            Utilisateur utilisateur = new Utilisateur();
+            var reponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?idUtilisateur=" + idUtilisateur + "&clafouti=" + true);
+
+            return utilisateur;
+        }
+
+
     }
 }
