@@ -20,7 +20,7 @@ namespace MasterCodeMobile.Services
         Task<Forum> GetForumAsync(string id);
         Task<bool> Login(Utilisateur utilisateur, bool forcedRefresh = false);
 
-        Task<IEnumerable<Message>> GetForumDetailAsync(string idforum, bool forcedRefresh = false);
+        Task<IEnumerable<MessageForum>> GetForumDetailAsync(string idforum, bool forcedRefresh = false);
 
         Task<Message> PostMessageAsync(Message message, string token);
         

@@ -16,8 +16,7 @@
             <Entry Placeholder="Password" PlaceholderColor="LightGray" IsPassword="True" VerticalOptions="Center" TextColor="Black" x:Name="MDPConnexion" Text="{Binding Utilisateur.MotDePasse}"/>
             
             <ActivityIndicator />
-            <ProgressBar  ProgressColor="Orange" Progress="0" x:Name="chargement2"  WidthRequest="300" HeightRequest="20" />
-            <Label  HorizontalOptions="Center" x:Name="valeurChargement" Text="{Binding Progress, Source={x:Reference chargement2}}"/>
+            
             <Label  x:Name="infoConnexion" TextColor="red"/>
             <Button Text="Se connecter" BackgroundColor="#99ff5e" Clicked="Connexion_Clicked"/>
             <Button Text="Mot de passe oublié" />

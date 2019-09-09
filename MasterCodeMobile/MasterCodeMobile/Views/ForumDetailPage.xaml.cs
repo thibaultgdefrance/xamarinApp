@@ -27,6 +27,7 @@ namespace MasterCodeMobile.Views
             Forum = new Forum();
             
             List<Message> messages = new List<Message>();
+            List<MessageForum> messagesForum = new List<MessageForum>();
         }
         public ForumDetailPage(ForumDetailViewModels viewModel)
         {

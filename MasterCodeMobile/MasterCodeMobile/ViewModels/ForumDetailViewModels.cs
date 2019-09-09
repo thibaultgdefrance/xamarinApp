@@ -18,9 +18,11 @@ namespace MasterCodeMobile.ViewModels
     {
         HttpClient htc = new HttpClient();
         public ObservableCollection<Message> Messages { get; set; }
+        public ObservableCollection<MessageForum> MessagesForum { get; set; }
         public Forum Forum { get; set; }
         public Command LoadMessagesCommand { get; set; }
-        public List<Message> messages { get; set; }
+        public ObservableCollection<Message> messages { get; set; }
+        public ObservableCollection<MessageForum> messagesForum { get; set; }
         public Message message { get; set; }
 
         public ClefDeCryptage2 clef = new ClefDeCryptage2();
@@ -30,7 +32,8 @@ namespace MasterCodeMobile.ViewModels
         public ForumDetailViewModels(Forum forum = null)
         {
             Forum = forum;
-            Messages = new ObservableCollection<Message>();
+            messages = new ObservableCollection<Message>();
+            messagesForum = new ObservableCollection<MessageForum>();
             LoadMessagesCommand = new Command(async () => await ExecuteLoadMessagesCommand());
             //ExecuteLoadForumsCommand = new Command(async () => await ExecuteLoadForumCommand());
         }
@@ -43,11 +46,11 @@ namespace MasterCodeMobile.ViewModels
 
             try
             {
-                Messages.Clear();
+                messagesForum.Clear();
                 var msg = await DataStore.GetForumDetailAsync(Forum.IdForum,false);
-                foreach (Message item in msg)
+                foreach (MessageForum item in msg)
                 {
-                    Messages.Add(item);
+                    messagesForum.Add(item);
                 }
 
 

@@ -18,6 +18,7 @@ namespace MasterCodeMobile.Services
         List<Item> items;
         List<Categorie> categories;
         public List<Message> messages;
+        List<MessageForum> messagesForum;
         List<Forum> forums;
         ClefDeCryptage2 clef = new ClefDeCryptage2();
         HttpClient htc = new HttpClient();
@@ -129,22 +130,23 @@ namespace MasterCodeMobile.Services
             }
             return await Task.FromResult(forums);
         }*/
-        public  async Task<IEnumerable<Message>> GetForumDetailAsync(string idforum, bool forcedRefresh = false)
+        public  async Task<IEnumerable<MessageForum>> GetForumDetailAsync(string idforum, bool forcedRefresh = false)
         {
-           
+            
             HttpClient htcT = new HttpClient();
             string idf = idforum.Replace("\"", "");
             Application.Current.Properties["IdForum"] = idforum;
-            string req = "http://10.115.145.48/api/Messages?idForum="+idf;
+            //string req = "http://10.115.145.48/api/Messages?idForum="+idf;
+            string req = "http://10.115.145.48/api/Messages?IdForum=" + idf + "&sandwich=" + true;
             var reponse = await htcT.GetStringAsync(req);
 
 
-            messages = JsonConvert.DeserializeObject<List<Message>>(reponse);
+            messagesForum = JsonConvert.DeserializeObject<List<MessageForum>>(reponse);
             
 
           
 
-            return messages.AsEnumerable();
+            return messagesForum.AsEnumerable();
         }
 
         public async Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false)

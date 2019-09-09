@@ -22,7 +22,7 @@ namespace MasterCodeMobile.Views
         public LoginPage()
         {
             InitializeComponent();
-            chargement2.ProgressTo(1, 9000, Easing.Linear);
+            //chargement2.ProgressTo(1, 9000, Easing.Linear);
             
             Utilisateur = new Utilisateur {
                 Email="",
@@ -64,7 +64,7 @@ namespace MasterCodeMobile.Views
                 HeightRequest = 20
             };
             await chargement.ProgressTo(1, 9000, Easing.Linear);
-            await chargement2.ProgressTo(1 , 9000, Easing.Linear);*/
+            await chargement2.ProgressTo(1 , 9000, Easing.Linear);
             if (EmailConnexion.Text!="")
             {
                 chargement2.Progress += 0.5;
@@ -80,7 +80,7 @@ namespace MasterCodeMobile.Views
             else
             {
                 chargement2.Progress -= 0.5;
-            }
+            }*/
 
         }
 
