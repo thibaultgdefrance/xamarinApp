@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "2d87ccf2d528bef515e732de16a08f7cb60c1083"
+    "signature": "f3a19cfd059af1e4c95d8dfcd9754f9e2014af3c"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,7 +11,9 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3-beta1",
+          "Plugin.Permissions": "5.0.0-beta",
           "Rg.Plugins.Popup": "1.1.5.188",
+          "Xam.Plugin.Media": "4.3.1-beta",
           "Xamarin.Essentials": "1.1.0",
           "Xamarin.Forms": "4.0.0.425677",
           "Cryptage": "1.0.0.0",
@@ -35,6 +37,14 @@
           }
         }
       },
+      "Plugin.Permissions/5.0.0-beta": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Permissions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Rg.Plugins.Popup/1.1.5.188": {
         "dependencies": {
           "Xamarin.Forms": "4.0.0.425677"
@@ -51,6 +61,17 @@
           "lib/netstandard2.0/System.Numerics.Vectors.dll": {
             "assemblyVersion": "4.1.4.0",
             "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "Xam.Plugin.Media/4.3.1-beta": {
+        "dependencies": {
+          "Plugin.Permissions": "5.0.0-beta"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Media.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -126,6 +147,13 @@
       "path": "newtonsoft.json/12.0.3-beta1",
       "hashPath": "newtonsoft.json.12.0.3-beta1.nupkg.sha512"
     },
+    "Plugin.Permissions/5.0.0-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y82iRNblpHbVGIPyyd5fH857IkTY/Mes0TWISg6HuT69OOgSYeUPHJtue8Fpx6GtsH857OHt465aJRWDWL7clg==",
+      "path": "plugin.permissions/5.0.0-beta",
+      "hashPath": "plugin.permissions.5.0.0-beta.nupkg.sha512"
+    },
     "Rg.Plugins.Popup/1.1.5.188": {
       "type": "package",
       "serviceable": true,
@@ -139,6 +167,13 @@
       "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
       "path": "system.numerics.vectors/4.5.0",
       "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "Xam.Plugin.Media/4.3.1-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/ZMhkfbM94bnDcdPugL44Hon9Cr1/QnG/e+SI7rj/UPNMfv/MmM0v/ou0wE45Wa0N15BvQZdQP3qaDPTcMKiIw==",
+      "path": "xam.plugin.media/4.3.1-beta",
+      "hashPath": "xam.plugin.media.4.3.1-beta.nupkg.sha512"
     },
     "Xamarin.Essentials/1.1.0": {
       "type": "package",

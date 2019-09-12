@@ -11,6 +11,35 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.CurrentActivity/2.1.0.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid44/Plugin.CurrentActivity.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid44/Plugin.CurrentActivity.dll": {}
+        }
+      },
+      "Plugin.Permissions/5.0.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.CurrentActivity": "2.1.0.4",
+          "Xamarin.Android.Support.Compat": "28.0.0.1",
+          "Xamarin.Android.Support.Core.Utils": "28.0.0.1"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Plugin.Permissions.dll": {}
+        }
+      },
       "Rg.Plugins.Popup/1.1.5.188": {
         "type": "package",
         "dependencies": {
@@ -32,6 +61,22 @@
         },
         "runtime": {
           "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "Xam.Plugin.Media/4.3.1-beta": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Permissions": "5.0.0-beta",
+          "Xamarin.Android.Support.Core.Utils": "28.0.0.1"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Plugin.Media.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Plugin.Media.dll": {}
         }
       },
       "Xamarin.Android.Arch.Core.Common/1.1.1.1": {
@@ -869,7 +914,9 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3-beta1",
+          "Plugin.Permissions": "5.0.0-beta",
           "Rg.Plugins.Popup": "1.1.5.188",
+          "Xam.Plugin.Media": "4.3.1-beta",
           "Xamarin.Essentials": "1.1.0",
           "Xamarin.Forms": "4.0.0.425677"
         },
@@ -911,6 +958,51 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.3-beta1.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Plugin.CurrentActivity/2.1.0.4": {
+      "sha512": "m8xaXvXUzBSqP6xRe5PeIG347WxsG/VWrZta7MnPpSvNuPf0RLB/S49UCCQyBKSsfu053+apvYm14BC7GU6Zzg==",
+      "type": "package",
+      "path": "plugin.currentactivity/2.1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid44/Plugin.CurrentActivity.dll",
+        "lib/monoandroid44/Plugin.CurrentActivity.xml",
+        "plugin.currentactivity.2.1.0.4.nupkg.sha512",
+        "plugin.currentactivity.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Plugin.Permissions/5.0.0-beta": {
+      "sha512": "Y82iRNblpHbVGIPyyd5fH857IkTY/Mes0TWISg6HuT69OOgSYeUPHJtue8Fpx6GtsH857OHt465aJRWDWL7clg==",
+      "type": "package",
+      "path": "plugin.permissions/5.0.0-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid70/Plugin.Permissions.dll",
+        "lib/monoandroid70/Plugin.Permissions.pdb",
+        "lib/monoandroid71/Plugin.Permissions.dll",
+        "lib/monoandroid71/Plugin.Permissions.pdb",
+        "lib/monoandroid80/Plugin.Permissions.dll",
+        "lib/monoandroid80/Plugin.Permissions.pdb",
+        "lib/monoandroid81/Plugin.Permissions.dll",
+        "lib/monoandroid81/Plugin.Permissions.pdb",
+        "lib/monoandroid90/Plugin.Permissions.dll",
+        "lib/monoandroid90/Plugin.Permissions.pdb",
+        "lib/netstandard1.0/Plugin.Permissions.dll",
+        "lib/netstandard1.0/Plugin.Permissions.pdb",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.dll",
+        "lib/uap10.0.16299/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.pri",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.pdb",
+        "plugin.permissions.5.0.0-beta.nupkg.sha512",
+        "plugin.permissions.nuspec",
+        "readme.txt"
       ]
     },
     "Rg.Plugins.Popup/1.1.5.188": {
@@ -988,6 +1080,49 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Xam.Plugin.Media/4.3.1-beta": {
+      "sha512": "/ZMhkfbM94bnDcdPugL44Hon9Cr1/QnG/e+SI7rj/UPNMfv/MmM0v/ou0wE45Wa0N15BvQZdQP3qaDPTcMKiIw==",
+      "type": "package",
+      "path": "xam.plugin.media/4.3.1-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid70/Plugin.Media.dll",
+        "lib/monoandroid70/Plugin.Media.pdb",
+        "lib/monoandroid70/Plugin.Media.xml",
+        "lib/monoandroid71/Plugin.Media.dll",
+        "lib/monoandroid71/Plugin.Media.pdb",
+        "lib/monoandroid71/Plugin.Media.xml",
+        "lib/monoandroid80/Plugin.Media.dll",
+        "lib/monoandroid80/Plugin.Media.pdb",
+        "lib/monoandroid80/Plugin.Media.xml",
+        "lib/monoandroid81/Plugin.Media.dll",
+        "lib/monoandroid81/Plugin.Media.pdb",
+        "lib/monoandroid81/Plugin.Media.xml",
+        "lib/monoandroid90/Plugin.Media.dll",
+        "lib/monoandroid90/Plugin.Media.pdb",
+        "lib/monoandroid90/Plugin.Media.xml",
+        "lib/netstandard1.0/Plugin.Media.dll",
+        "lib/netstandard1.0/Plugin.Media.pdb",
+        "lib/netstandard1.0/Plugin.Media.xml",
+        "lib/netstandard2.0/Plugin.Media.dll",
+        "lib/netstandard2.0/Plugin.Media.pdb",
+        "lib/netstandard2.0/Plugin.Media.xml",
+        "lib/tizen40/Plugin.Media.dll",
+        "lib/tizen40/Plugin.Media.pdb",
+        "lib/tizen40/Plugin.Media.xml",
+        "lib/uap10.0.16299/Plugin.Media.dll",
+        "lib/uap10.0.16299/Plugin.Media.pdb",
+        "lib/uap10.0.16299/Plugin.Media.pri",
+        "lib/uap10.0.16299/Plugin.Media.xml",
+        "lib/xamarinios10/Plugin.Media.dll",
+        "lib/xamarinios10/Plugin.Media.pdb",
+        "lib/xamarinios10/Plugin.Media.xml",
+        "readme.txt",
+        "xam.plugin.media.4.3.1-beta.nupkg.sha512",
+        "xam.plugin.media.nuspec"
       ]
     },
     "Xamarin.Android.Arch.Core.Common/1.1.1.1": {
@@ -2074,7 +2209,9 @@
     "MonoAndroid,Version=v9.0": [
       "MasterCodeMobile >= 1.0.0",
       "Newtonsoft.Json >= 12.0.3-beta1",
+      "Plugin.Permissions >= 5.0.0-beta",
       "Rg.Plugins.Popup >= 1.1.5.188",
+      "Xam.Plugin.Media >= 4.3.1-beta",
       "Xamarin.Android.Support.Core.Utils >= 28.0.0.1",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.1",
       "Xamarin.Android.Support.Design >= 28.0.0.1",
@@ -2132,9 +2269,17 @@
             "target": "Package",
             "version": "[12.0.3-beta1, )"
           },
+          "Plugin.Permissions": {
+            "target": "Package",
+            "version": "[5.0.0-beta, )"
+          },
           "Rg.Plugins.Popup": {
             "target": "Package",
             "version": "[1.1.5.188, )"
+          },
+          "Xam.Plugin.Media": {
+            "target": "Package",
+            "version": "[4.3.1-beta, )"
           },
           "Xamarin.Android.Support.Core.Utils": {
             "target": "Package",

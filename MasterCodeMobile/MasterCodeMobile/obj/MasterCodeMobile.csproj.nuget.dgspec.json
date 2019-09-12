@@ -53,9 +53,17 @@
               "target": "Package",
               "version": "[12.0.3-beta1, )"
             },
+            "Plugin.Permissions": {
+              "target": "Package",
+              "version": "[5.0.0-beta, )"
+            },
             "Rg.Plugins.Popup": {
               "target": "Package",
               "version": "[1.1.5.188, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[4.3.1-beta, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

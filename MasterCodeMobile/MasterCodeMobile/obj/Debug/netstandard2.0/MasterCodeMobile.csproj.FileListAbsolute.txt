@@ -28,3 +28,4 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\bi
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.csproj.CopyComplete
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\Views\TestProgressBarPage.xaml.g.cs
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile\obj\Debug\netstandard2.0\MasterCodeMobile.csprojAssemblyReference.cache

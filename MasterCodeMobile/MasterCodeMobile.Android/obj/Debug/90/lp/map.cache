@@ -1,6 +1,9 @@
 FormsViewGroup
 MasterCodeMobile
 Newtonsoft.Json
+Plugin.CurrentActivity
+Plugin.Media
+Plugin.Permissions
 Rg.Plugins.Popup
 Rg.Plugins.Popup.Droid
 System.Runtime

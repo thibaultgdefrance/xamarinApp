@@ -7,7 +7,7 @@
              x:Class="MasterCodeMobile.Views.ProfilPage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
+           <StackLayout>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -22,27 +22,27 @@
                     <Label Text="nb commentaire(s):" HorizontalOptions="Start" Grid.Column="1" Grid.Row="1" Margin="0,50,0,0"/>
                 </Grid>
 
+                <ListView   ItemsSource="{Binding Utilisateur}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="10,0,5,0" WidthRequest="150" HeightRequest="150">
+                                    <Entry  x:Name="PseudoDeLutilisateur"  Placeholder="" Text="{Binding Pseudo}"/>
+                                    <Label Text="mot de passe" />
+                                    <Entry Placeholder="" x:Name="MotDePasseDeLutilisateur" Text="{Binding MDP}"/>
 
 
-
-                <Label Text="Pseudo" />
-                <Entry  x:Name="PseudoDeLutilisateur"  Placeholder="" Text="PseudoDeLutilisateur"/>
-                <Label Text="mot de passe" />
-                <Entry Placeholder="" Text="MotDepasseDeLutilisateur"/>
-                <Label Text="confirmation mot de passe" />
-                <Entry Placeholder="" Text="MotDepasseDeLutilisateur"/>
-                <Label Text="Email" />
-                <Entry Placeholder="" Text="EmailUtilisateur"/>
-
-                <Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white"/>
+                                    <Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
 
-                <Button Text="Round Button"
-                     ImageSource="@drawable/button_bg_round"
-                  
-                     />
 
             </StackLayout>
+
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

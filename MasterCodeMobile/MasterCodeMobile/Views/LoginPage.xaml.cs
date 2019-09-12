@@ -38,9 +38,9 @@ namespace MasterCodeMobile.Views
            
             MessagingCenter.Send(this, "Connexion", Utilisateur);
 
-            if (Application.Current.Properties.ContainsKey("Email"))
+            if (Application.Current.Properties.ContainsKey("utilisateur"))
             {
-                infoConnexion.Text = Application.Current.Properties["Email"].ToString();
+                
                 Navigation.PushAsync(new ListeForumsPage());
             }
             else
@@ -57,6 +57,11 @@ namespace MasterCodeMobile.Views
         async protected override void OnAppearing()
         {
             base.OnAppearing();
+            if (Application.Current.Properties.ContainsKey("utilisateur"))
+            {
+
+                await Navigation.PushAsync(new ListeForumsPage());
+            }
             /*var chargement = new ProgressBar {
                 Progress = 0.1,
                 ProgressColor = Color.LimeGreen,

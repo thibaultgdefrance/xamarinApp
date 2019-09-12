@@ -51,17 +51,18 @@ namespace MasterCodeMobile.ViewModels
                 message = _message;
                 //Utilisateur.IdUtilisateur = Application.Current.Properties["IdUtilisateur"].ToString();
                 //message.IdForum = "1";
-                
-                
-                
-                await DataStore.PostMessageAsync(message,token);
-                //messages.Add(message);
-            }
 
-           );
+
+
+                await DataStore.PostMessageAsync(message, token);
+                //messages.Add(message);
+            });
+            
            
             
         }
+
+
 
         async Task ExecuteLoadItemsCommand()
         {

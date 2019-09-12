@@ -168,8 +168,9 @@ namespace MasterCodeMobile.Services
         {
             return await Task.FromResult(forums.FirstOrDefault(s => s.Id == id));
         }
-        public async Task<bool> Login(Utilisateur utilisateur,bool forcedRefresh = false)
+        public async Task<Utilisateur> Login(Utilisateur utilisateur,bool forcedRefresh = false)
         {
+            
             string email = utilisateur.Email;
             string IdUtilisateur = utilisateur.IdUtilisateur;
             string pass = utilisateur.MotDePasse;
@@ -197,12 +198,13 @@ namespace MasterCodeMobile.Services
                 var ConnexionReponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?token="+token+"&pseudo="+email+"&mdp="+pass+"");
                 if (ConnexionReponse.Contains("404"))
                 {
-                    Application.Current.Properties["Email"] = "Le mot de passe ou l'email sont éronés";
+                   
                 }
                 else
                 {
-                    Application.Current.Properties["Email"]=email;
-                    Application.Current.Properties["IdUtilisateur"] = IdUtilisateur;
+                    utilisateur = JsonConvert.DeserializeObject<Utilisateur>(ConnexionReponse);
+                    Application.Current.Properties["utilisateur"] = utilisateur as Utilisateur;
+                    return await Task.FromResult(utilisateur);
                 }
 
             }
@@ -211,7 +213,7 @@ namespace MasterCodeMobile.Services
 
 
             }
-            return await Task.FromResult(true);
+            return null;
         }
 
 
@@ -274,9 +276,19 @@ namespace MasterCodeMobile.Services
         {
 
             Utilisateur utilisateur = new Utilisateur();
-            var reponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?idUtilisateur=" + idUtilisateur + "&clafouti=" + true);
+            try
+            {
+                var reponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?idUtilisateur=" + idUtilisateur + "&clafouti=" + true);
+                utilisateur= JsonConvert.DeserializeObject<Utilisateur>(reponse);
+                
+            }
+            catch (Exception)
+            {
 
-            return utilisateur;
+                throw;
+            }
+
+            return await Task.FromResult(utilisateur);
         }
 
 
