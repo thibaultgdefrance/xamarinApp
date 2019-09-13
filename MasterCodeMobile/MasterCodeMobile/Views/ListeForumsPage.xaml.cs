@@ -33,13 +33,18 @@ namespace MasterCodeMobile.Views
 
 
         }
+        public async void goProfil(object sender,EventArgs e)
+        {
+            await Navigation.PushAsync(new ProfilPage());
+        }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
+         //   base.OnAppearing();
 
             //await Navigation.PushAsync(new ForumDetailPage());
             if (viewModel.Forums.Count == 0)
                 viewModel.LoadForumsCommand.Execute(null);
+
         }
 
         

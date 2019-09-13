@@ -16,6 +16,7 @@ namespace MasterCodeMobile.Views
     
     public partial class LoginPage : ContentPage
     {
+
         public Utilisateur Utilisateur { get; set; }
        
         ClefDeCryptage2 clef = new ClefDeCryptage2();

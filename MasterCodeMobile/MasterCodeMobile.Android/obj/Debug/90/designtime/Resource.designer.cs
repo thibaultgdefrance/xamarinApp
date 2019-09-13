@@ -6395,14 +6395,17 @@ namespace MasterCodeMobile.Droid
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
+			// aapt resource value: 0x7F010004
+			public const int profil = 2130771972;
+			
 			// aapt resource value: 0x7F09006F
 			public const int tooltip_frame_dark = 2131296367;
 			
 			// aapt resource value: 0x7F090070
 			public const int tooltip_frame_light = 2131296368;
 			
-			// aapt resource value: 0x7F010004
-			public const int xamarin_logo = 2130771972;
+			// aapt resource value: 0x7F010005
+			public const int xamarin_logo = 2130771973;
 			
 			static Drawable()
 			{

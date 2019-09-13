@@ -172,7 +172,7 @@ namespace MasterCodeMobile.Services
         {
             
             string email = utilisateur.Email;
-            string IdUtilisateur = utilisateur.IdUtilisateur;
+            
             string pass = utilisateur.MotDePasse;
             try
             {
@@ -195,10 +195,10 @@ namespace MasterCodeMobile.Services
                 /*pass = builder.ToString();*/
                 
                 HttpClient htc = new HttpClient();
-                var ConnexionReponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?token="+token+"&pseudo="+email+"&mdp="+pass+"");
-                if (ConnexionReponse.Contains("404"))
+                var ConnexionReponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?Email="+email+"&MDP="+pass+"&clafouti=true");
+                if (ConnexionReponse=="null")
                 {
-                   
+                    Application.Current.Properties.Remove("utilisateur");
                 }
                 else
                 {
@@ -210,8 +210,7 @@ namespace MasterCodeMobile.Services
             }
             catch (Exception)
             {
-
-
+              
             }
             return null;
         }

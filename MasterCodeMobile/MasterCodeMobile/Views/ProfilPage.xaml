@@ -17,27 +17,30 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Image Source="iconeutilisateur.jpg" Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Start"/>
+                    <Image Source="iconeutilisateur.jpg" Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Start" x:Name="ImageUtilisateur"/>
                     <Label Text="popularité:" HorizontalOptions="Start" Grid.Column="1" Margin="0,50,0,0"/>
                     <Label Text="nb commentaire(s):" HorizontalOptions="Start" Grid.Column="1" Grid.Row="1" Margin="0,50,0,0"/>
                 </Grid>
 
-                <ListView   ItemsSource="{Binding Utilisateur}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Margin="10,0,5,0" WidthRequest="150" HeightRequest="150">
-                                    <Entry  x:Name="PseudoDeLutilisateur"  Placeholder="" Text="{Binding Pseudo}"/>
-                                    <Label Text="mot de passe" />
-                                    <Entry Placeholder="" x:Name="MotDePasseDeLutilisateur" Text="{Binding MDP}"/>
 
+                <StackLayout Margin="10,0,5,0" WidthRequest="150" HeightRequest="150">
+                    
+                    <Label Text="Avatar" />
+                    
+                    <Entry Placeholder="chemin de l'avatar" x:Name="CheminAvatar"/>
+                    
+                    <Label Text="Pseudo" x:Name="labelPseudo"/>
+                    
+                    <Entry Placeholder="entrez votre pseudo" x:Name="Pseudo" />
+                    <Label Text="mot de passe" x:Name="labelMDP"/>
+                    
+                    <Entry Placeholder="entrez votre mot de passe" x:Name="MDP" />
 
-                                    <Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                    <Entry Placeholder="truc" x:Name="truc"/>
+
+                    <Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white" x:Name="btnValidation"/>
+                </StackLayout>
+
 
 
 
