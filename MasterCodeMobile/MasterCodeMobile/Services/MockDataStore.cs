@@ -289,7 +289,20 @@ namespace MasterCodeMobile.Services
 
             return await Task.FromResult(utilisateur);
         }
+        async public Task<bool> UpdateProfil(string pseudo,string mdp,string cheminavatar)
+        {
+            
+            Utilisateur utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
+            utilisateur.Pseudo = pseudo;
+            utilisateur.MotDePasse = mdp;
+            utilisateur.CheminAvatar = cheminavatar;
+            var json = JsonConvert.SerializeObject(utilisateur);
+            var contenu = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage rep = await htc.PutAsync("http://10.115.145.48/api/Utilisateurs/"+utilisateur.IdUtilisateur+"?croquette=true",contenu);
+            
 
+            return true;
+        }
 
     }
 }

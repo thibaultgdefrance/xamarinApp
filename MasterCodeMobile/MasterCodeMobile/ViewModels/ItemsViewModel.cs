@@ -20,6 +20,7 @@ namespace MasterCodeMobile.ViewModels
         public List<Forum> Forums;
         public Forum Forum { get; set; }
         public Message message { get; set; }
+        public Utilisateur utilisateur { get; set; }
         public List<Message> messages { get; set; }
         public ClefDeCryptage2 clef = new ClefDeCryptage2();
 
@@ -57,8 +58,17 @@ namespace MasterCodeMobile.ViewModels
                 await DataStore.PostMessageAsync(message, token);
                 //messages.Add(message);
             });
-            
-           
+
+            MessagingCenter.Subscribe<ProfilPage, Utilisateur>(this, "ModifierProfil", async (obj, item) =>
+              {
+                  
+                  var _utilisateur = item as Utilisateur;
+                  utilisateur = _utilisateur;
+                  await DataStore.UpdateProfil(utilisateur.Pseudo,utilisateur.MotDePasse,utilisateur.CheminAvatar);
+              }
+
+
+            );
             
         }
 

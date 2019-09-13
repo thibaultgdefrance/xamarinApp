@@ -38,10 +38,12 @@
 
                     <Entry Placeholder="truc" x:Name="truc"/>
 
-                    <Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white" x:Name="btnValidation"/>
+                    <!--<Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white" x:Name="btnValidation" Clicked="ModifierProfilAsync"/>-->
+
+                    
                 </StackLayout>
 
-
+                <Button Text="valider profil" Clicked="ModifierProfilAsync" VerticalOptions="End"/>
 
 
             </StackLayout>

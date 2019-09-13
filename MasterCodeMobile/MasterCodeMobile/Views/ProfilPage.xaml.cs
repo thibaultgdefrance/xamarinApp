@@ -25,6 +25,14 @@ namespace MasterCodeMobile.Views
            // BindingContex = viewModel = new ProfilViewModel();
             
         }
+        public void ModifierProfilAsync(Object sender,EventArgs e)
+        {
+            Utilisateur utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
+            utilisateur.CheminAvatar = CheminAvatar.Text;
+            utilisateur.Pseudo = Pseudo.Text;
+            utilisateur.MotDePasse = MDP.Text;
+            MessagingCenter.Send(this, "ModifierProfil", utilisateur);
+        }
         protected override void OnAppearing()
         {
            
@@ -39,9 +47,10 @@ namespace MasterCodeMobile.Views
             }
             else
             {
-                CheminAvatar.Text = utilisateur.CheminAvatar;
+                CheminAvatar.Text =  utilisateur.CheminAvatar;
                 ImageUtilisateur.Source = utilisateur.CheminAvatar;
             }
+
             //PseudoUtilisateur.Text = utilisateur.Pseudo;
             //MotDePasseUtilisateur.Text = utilisateur.MotDePasse;
             /*Utilisateur utilisateur = new Utilisateur();
