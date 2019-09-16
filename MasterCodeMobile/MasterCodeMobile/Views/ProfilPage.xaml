@@ -10,8 +10,9 @@
            <StackLayout>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="50" />
                         <RowDefinition Height="*" />
+                        <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -32,19 +33,22 @@
                     <Label Text="Pseudo" x:Name="labelPseudo"/>
                     
                     <Entry Placeholder="entrez votre pseudo" x:Name="Pseudo" />
-                    <Label Text="mot de passe" x:Name="labelMDP"/>
                     
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="mot de passe" x:Name="labelMDP"/>
+
                     <Entry Placeholder="entrez votre mot de passe" x:Name="MDP" />
 
-                    <Entry Placeholder="truc" x:Name="truc"/>
+
 
                     <!--<Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white" x:Name="btnValidation" Clicked="ModifierProfilAsync"/>-->
 
-                    
+                    <Button Text="valider profil" Clicked="ModifierProfilAsync" VerticalOptions="End" BackgroundColor="#99ff5e" TextColor="white"/>
+
+
                 </StackLayout>
-
-                <Button Text="valider profil" Clicked="ModifierProfilAsync" VerticalOptions="End"/>
-
+               
 
             </StackLayout>
 

@@ -39,7 +39,7 @@ namespace MasterCodeMobile.ViewModels
             try
             {
                 Forums.Clear();
-                var forums = await DataStore.GetForumsAsync(true);
+                var forums = await DataStore.GetForumsAsync();
                 
                 
                 foreach (var forum in forums)

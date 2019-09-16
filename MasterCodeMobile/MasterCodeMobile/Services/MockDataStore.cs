@@ -19,7 +19,7 @@ namespace MasterCodeMobile.Services
         List<Categorie> categories;
         public List<Message> messages;
         List<MessageForum> messagesForum;
-        List<Forum> forums;
+        public List<Forum> forums;
         ClefDeCryptage2 clef = new ClefDeCryptage2();
         HttpClient htc = new HttpClient();
         
@@ -216,17 +216,19 @@ namespace MasterCodeMobile.Services
         }
 
 
-        public async void GetForumsAsync()
+        public async Task<List<Forum>> GetForumsAsync()
         {
-            List<Forum> forums;
+            
             HttpClient htc = new HttpClient();
             try
             {
-                var ConnexionReponse = await htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Fora");
+                var ConnexionReponse = await htc.GetStringAsync("http://10.115.145.48/api/Forums");
+                var obj = JsonConvert.DeserializeObject<List<Forum>>(ConnexionReponse);
+                return obj;
             }               
             catch (Exception)
             {
-              
+              return null;
             }
             
 
