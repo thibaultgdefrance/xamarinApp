@@ -39,12 +39,16 @@ namespace MasterCodeMobile.Views
         }
         protected override void OnAppearing()
         {
+            
          //   base.OnAppearing();
 
             //await Navigation.PushAsync(new ForumDetailPage());
             if (viewModel.Forums.Count == 0)
                 viewModel.LoadForumsCommand.Execute(null);
-
+            
+            Utilisateur utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
+            lbtest.Text ="Bonjour"+utilisateur.Pseudo;
+            imgAvatar.Source =utilisateur.CheminAvatar;
         }
 
         

@@ -195,7 +195,7 @@ namespace MasterCodeMobile.Services
                 /*pass = builder.ToString();*/
                 
                 HttpClient htc = new HttpClient();
-                var ConnexionReponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?Email="+email+"&MDP="+pass+"&clafouti=true");
+                var ConnexionReponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?Email="+email+"&MDP="+pass+"&clafouti="+true);
                 if (ConnexionReponse=="null")
                 {
                     Application.Current.Properties.Remove("utilisateur");
@@ -203,7 +203,7 @@ namespace MasterCodeMobile.Services
                 else
                 {
                     utilisateur = JsonConvert.DeserializeObject<Utilisateur>(ConnexionReponse);
-                    Application.Current.Properties["utilisateur"] = utilisateur as Utilisateur;
+                    Application.Current.Properties["utilisateur"]=utilisateur as Utilisateur;
                     return await Task.FromResult(utilisateur);
                 }
 

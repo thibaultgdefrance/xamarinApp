@@ -15,5 +15,6 @@ namespace MasterCodeMobile.Models
         public string IdStatut { get; set; }
         public string IdAuteur{ get; set; }
         public string DatePublication { get; set; }
+        
     }
 }

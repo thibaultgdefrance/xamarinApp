@@ -44,9 +44,10 @@ namespace MasterCodeMobile.Views
 
         public void PostMessagesAsync(Object sender ,EventArgs e)
         {
+            Utilisateur utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
             Message message = new Message();
             message.Texte = commentaire.Text;
-            message.IdAuteur = "1";
+            message.IdAuteur = utilisateur.IdUtilisateur;
             message.IdForum = Application.Current.Properties["IdForum"].ToString();
             message.DatePublication = DateTime.Now.ToLongDateString();
             message.IdMessageParent = null;

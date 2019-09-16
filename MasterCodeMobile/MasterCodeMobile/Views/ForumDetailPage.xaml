@@ -19,7 +19,6 @@
                         <ListView.Header BackgroundColor="black" Padding="2,2,2,2" HasUnevenRows="True">
                             <StackLayout  BackgroundColor="#eb4034">
                                 <Label Text="{Binding Forum.Sujet}" FontSize="Large" HorizontalOptions="Center"/>
-
                             </StackLayout>
                         </ListView.Header>
                         <ListView.ItemTemplate  >
@@ -27,9 +26,14 @@
                             <DataTemplate >
                                 
                                 <ViewCell >
+                                    
                                     <ViewCell.View >
                                         <StackLayout  Margin="20,0,20,20">
+
+                                            <Image Source=""/>
+
                                             <Label Text="{Binding TexteMessage}" />
+                                            
                                             <Label Text="{Binding PseudoUtilisateur}" HorizontalOptions="End"/>
                                             <Label Text="{Binding DatePublication}" TextColor="LightGray" FontSize="Small" HorizontalOptions="End"/>
                                         </StackLayout>

@@ -8,8 +8,8 @@
     <ContentPage.Content>
         <ScrollView>
         <StackLayout>
-                <ImageButton Source="iconeutilisateur.jpg" HeightRequest="50" WidthRequest="50" Clicked="goProfil" HorizontalOptions="End"/>
-                <Label Text="Forums" HorizontalOptions="Center" FontSize="Large"/>
+                <ImageButton x:Name="imgAvatar" Source="" HeightRequest="50" WidthRequest="50" Clicked="goProfil" HorizontalOptions="End"/>
+                <Label x:Name="lbtest"  Text="" HorizontalOptions="Center" FontSize="Large"/>
                 <ListView x:Name="CategoriesListeView"
                       ItemsSource="{Binding Forums}"
                       HasUnevenRows="True"

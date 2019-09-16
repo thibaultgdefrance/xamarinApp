@@ -11,5 +11,6 @@ namespace MasterCodeMobile.Models
         public string PseudoUtilisateur { get; set; }
         public string DatePublication { get; set; }
         public string TexteMessage { get; set; }
+        public Utilisateur Utilisateur { get; set; }
     }
 }

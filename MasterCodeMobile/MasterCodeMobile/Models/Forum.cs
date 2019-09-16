@@ -17,6 +17,6 @@ namespace MasterCodeMobile.Models
         public string IdAcces { get; set; }
         public string IdLangue { get; set; }
         public string IdAuteur { get; set; }
-
+        public Utilisateur utilisateur { get; set; }
     }
 }
