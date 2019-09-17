@@ -18,9 +18,9 @@
             <ActivityIndicator />
             
             <Label  x:Name="infoConnexion" TextColor="red"/>
-            <Button Text="Se connecter" BackgroundColor="#99ff5e" Clicked="Connexion_Clicked"/>
-            <Button Text="Mot de passe oublié" />
-            <Button Text="S'inscrire" Clicked="Redirect_Clicked"/>
+            <Button Text="Se connecter" BackgroundColor="#99ff5e" Clicked="Connexion_Clicked" CornerRadius="20" Margin="80,0,80,20"/>
+            <Button Text="Mot de passe oublié" Margin="80,0,80,20" CornerRadius="20"/>
+            <Button Text="S'inscrire" Clicked="Redirect_Clicked" Margin="80,0,80,20" CornerRadius="20"/>
             
         </StackLayout>
         

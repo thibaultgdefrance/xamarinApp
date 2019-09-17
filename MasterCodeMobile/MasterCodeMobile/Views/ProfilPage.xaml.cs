@@ -22,11 +22,13 @@ namespace MasterCodeMobile.Views
         
         public ProfilPage()
         {
+            Utilisateur _Utilisateur= Application.Current.Properties["utilisateur"] as Utilisateur;
             InitializeComponent();
             // BindingContex = viewModel = new ProfilViewModel();
-            utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
-            ImageUtilisateur.Source = "http://fr.web.img4.acsta.net/r_1920_1080/medias/nmedia/18/66/81/38/18956961.jpg";
-            
+            utilisateur = _Utilisateur;
+            ImageUtilisateur.Source = utilisateur.CheminAvatar;
+
+
         }
         public void ModifierProfilAsync(Object sender,EventArgs e)
         {

@@ -18,13 +18,13 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Image Source="" Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Start" x:Name="ImageUtilisateur"/>
+                    <Image  Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Start" x:Name="ImageUtilisateur"/>
                     <Label Text="popularité:" HorizontalOptions="Start" Grid.Column="1" Margin="0,50,0,0"/>
                     <Label Text="nb commentaire(s):" HorizontalOptions="Start" Grid.Column="1" Grid.Row="1" Margin="0,50,0,0"/>
                 </Grid>
 
 
-                <StackLayout Margin="10,0,5,0" WidthRequest="150" HeightRequest="150">
+                <StackLayout Margin="10,0,5,10" WidthRequest="150" HeightRequest="150">
                     
                     <Label Text="Avatar" />
                     
@@ -35,7 +35,7 @@
                     <Entry Placeholder="entrez votre pseudo" x:Name="Pseudo" />
                     
                 </StackLayout>
-                <StackLayout>
+                <StackLayout Margin="20,0,5,20">
                     <Label Text="mot de passe" x:Name="labelMDP"/>
 
                     <Entry Placeholder="entrez votre mot de passe" x:Name="MDP" />
@@ -44,7 +44,7 @@
 
                     <!--<Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white" x:Name="btnValidation" Clicked="ModifierProfilAsync"/>-->
 
-                    <Button Text="valider profil" Clicked="ModifierProfilAsync" VerticalOptions="End" BackgroundColor="#99ff5e" TextColor="white"/>
+                    <Button Text="valider profil" Clicked="ModifierProfilAsync" VerticalOptions="End" BackgroundColor="#99ff5e" TextColor="white" CornerRadius="20"/>
 
 
                 </StackLayout>
