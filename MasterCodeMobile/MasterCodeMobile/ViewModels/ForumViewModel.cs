@@ -18,6 +18,7 @@ namespace MasterCodeMobile.ViewModels
         {
             Title = "Liste des forums";
             Forums = new ObservableCollection<Forum>();
+            //List<Forum> Forums = new List<Forum>();
             LoadForumsCommand = new Command(async () => await ExecuteLoadForumsCommand());
 
             /*MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
@@ -39,7 +40,7 @@ namespace MasterCodeMobile.ViewModels
             try
             {
                 Forums.Clear();
-                var forums = await DataStore.GetForumsAsync();
+                var forums = await DataStore.GetForumsAsync(true);
                 
                 
                 foreach (var forum in forums)

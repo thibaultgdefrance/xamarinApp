@@ -16,21 +16,24 @@
                    
                     <ListView ItemsSource="{Binding messagesForum}"
                  SelectedItem="{Binding YourSelectedItem, Mode=TwoWay}" HasUnevenRows="True"  Grid.Row="1" Grid.ColumnSpan="2" IsPullToRefreshEnabled="True">
+                        
                         <ListView.Header BackgroundColor="black" Padding="2,2,2,2" HasUnevenRows="True">
                             <StackLayout  BackgroundColor="#eb4034">
                                 <Label Text="{Binding Forum.Sujet}" FontSize="Large" HorizontalOptions="Center"/>
                             </StackLayout>
                         </ListView.Header>
                         <ListView.ItemTemplate  >
-
+                            
                             <DataTemplate >
                                 
                                 <ViewCell >
                                     
                                     <ViewCell.View >
+                                        
                                         <StackLayout  Margin="20,0,20,20">
 
-                                            <Image Source=""/>
+                                            
+                                            <Image Source="{Binding CheminAvatar}" HorizontalOptions="Start" HeightRequest="100"/>
 
                                             <Label Text="{Binding TexteMessage}" />
                                             

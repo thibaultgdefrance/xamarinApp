@@ -152,8 +152,8 @@ namespace MasterCodeMobile.Services
 
         public async Task<IEnumerable<Forum>> GetForumsAsync(bool forceRefresh = false)
         {
-            
-            //string reponse = await htc.GetStringAsync("http://api.forum.reseaudentreprise.com/api/Fora");
+
+            //string reponse = await htc.GetStringAsync("http://apiforum.cucarachat.com/api/Fora");
             string reponse = await htc.GetStringAsync("http://10.115.145.48/api/Forums");
             Forum forum = new Forum();
             List<Forum> forums = JsonConvert.DeserializeObject<List<Forum>>(reponse);
@@ -195,7 +195,7 @@ namespace MasterCodeMobile.Services
                 /*pass = builder.ToString();*/
                 
                 HttpClient htc = new HttpClient();
-                var ConnexionReponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?Email="+email+"&MDP="+pass+"&clafouti="+true);
+                var ConnexionReponse = await htc.GetStringAsync("http://10.115.145.48/api/Utilisateurs?Email=" + email+"&MDP="+pass+"&clafouti="+true);
                 if (ConnexionReponse=="null")
                 {
                     Application.Current.Properties.Remove("utilisateur");
@@ -266,7 +266,7 @@ namespace MasterCodeMobile.Services
             //HttpResponseMessage reponse= await htc.PostAsync("http://10.115.145.48/api/Messages?token="+token+"&IdForumSelectionne="+message.IdForum+"&idAuteur="+message.IdAuteur+"&texteMessage="+message.Texte,contenu);
 
 
-            HttpResponseMessage reponse = await htc.PostAsync("http://10.115.145.48/api/Messages",contenu);
+            HttpResponseMessage reponse = await htc.PostAsync("http://10.115.145.48/api/Messages", contenu);
 
            
 
@@ -300,8 +300,9 @@ namespace MasterCodeMobile.Services
             utilisateur.CheminAvatar = cheminavatar;
             var json = JsonConvert.SerializeObject(utilisateur);
             var contenu = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpResponseMessage rep = await htc.PutAsync("http://10.115.145.48/api/Utilisateurs/"+utilisateur.IdUtilisateur+"?croquette=true",contenu);
-            
+            HttpResponseMessage rep = await htc.PutAsync("http://10.115.145.48/api/Utilisateurs/" + utilisateur.IdUtilisateur+"?croquette="+true,contenu);
+
+
 
             return true;
         }

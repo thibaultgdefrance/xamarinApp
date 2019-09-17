@@ -15,12 +15,13 @@
                       HasUnevenRows="True"
                       RefreshCommand="{Binding LoadForumsCommand}"
                       IsPullToRefreshEnabled="True"
-                      IsRefreshing="{Binding IsBusy,Mode=OneWay}"
+                      
                       CachingStrategy="RecycleElement"
                       ItemSelected="GetForumDetailAsync">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                                <ViewCell.View>
                                 <StackLayout>
                                     <StackLayout x:Name="{binding id}" BackgroundColor="#99ff5e">
 
@@ -39,7 +40,7 @@
 
                                     </StackLayout>
                                 </StackLayout>
-                                
+                                </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

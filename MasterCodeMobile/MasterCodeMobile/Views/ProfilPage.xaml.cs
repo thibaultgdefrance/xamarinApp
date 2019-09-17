@@ -16,13 +16,16 @@ namespace MasterCodeMobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilPage : ContentPage
     {
-        
+
         ProfilViewModel viewModel;
-        public Utilisateur utilisateur = new Utilisateur();
+       Utilisateur utilisateur { get; set; }
+        
         public ProfilPage()
         {
             InitializeComponent();
-           // BindingContex = viewModel = new ProfilViewModel();
+            // BindingContex = viewModel = new ProfilViewModel();
+            utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
+            ImageUtilisateur.Source = "http://fr.web.img4.acsta.net/r_1920_1080/medias/nmedia/18/66/81/38/18956961.jpg";
             
         }
         public void ModifierProfilAsync(Object sender,EventArgs e)
@@ -36,11 +39,12 @@ namespace MasterCodeMobile.Views
         protected override void OnAppearing()
         {
            
-            Utilisateur utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
+            
 
             Pseudo.Text = utilisateur.Pseudo;
             MDP.Text = utilisateur.MotDePasse;
-            if (utilisateur.CheminAvatar=="default")
+            
+            /*if (utilisateur.CheminAvatar=="default")
             {
                 CheminAvatar.Text = "iconeutilisateur.jpg";
                 ImageUtilisateur.Source = "iconeutilisateur.jpg";
@@ -49,7 +53,7 @@ namespace MasterCodeMobile.Views
             {
                 CheminAvatar.Text =  utilisateur.CheminAvatar;
                 ImageUtilisateur.Source = utilisateur.CheminAvatar;
-            }
+            }*/
 
             //PseudoUtilisateur.Text = utilisateur.Pseudo;
             //MotDePasseUtilisateur.Text = utilisateur.MotDePasse;
