@@ -574,3 +574,4 @@ C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.An
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\afpa\source\repos\MasterCodeMobile\MasterCodeMobile\MasterCodeMobile.Android\obj\Debug\90\res\drawable\garbage.png

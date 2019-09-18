@@ -37,6 +37,7 @@ namespace MasterCodeMobile.ViewModels
             LoadMessagesCommand = new Command(async () => await ExecuteLoadMessagesCommand());
             //ExecuteLoadForumsCommand = new Command(async () => await ExecuteLoadForumCommand());
         }
+
         async Task ExecuteLoadMessagesCommand()
         {
             if (IsBusy)
@@ -63,8 +64,15 @@ namespace MasterCodeMobile.ViewModels
             {
                 IsBusy = false;
             }
+            MessagingCenter.Subscribe<ForumDetailPage, Message>(this, "sup", async (obj, message) =>
+               {
+                   Message message1 = new Message();
+                   message1.IdMessage = message.IdMessage;
+                    await DataStore.SupMessageAsync(message1.IdMessage);
+                   //
+               });
         }
-
+        
         /* async Task ExecuteLoadForumCommand()
          {
              if (IsBusy)
@@ -111,6 +119,7 @@ namespace MasterCodeMobile.ViewModels
                     });
         }*/
         
-
+        
         }
+        
     }

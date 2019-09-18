@@ -37,8 +37,9 @@
                                         <Label Text="{Binding DatePublication}" TextColor="Blue" FontSize="Small" HorizontalOptions="Center">
 
                                         </Label>
-
-                                    </StackLayout>
+                                        
+                                          
+                                        </StackLayout>
                                 </StackLayout>
                                 </ViewCell.View>
                         </ViewCell>

@@ -29,6 +29,16 @@ namespace MasterCodeMobile.Views
             List<Message> messages = new List<Message>();
             List<MessageForum> messagesForum = new List<MessageForum>();
         }
+
+
+        public void supMessage(Object sender, EventArgs e)
+        {
+            Message message = new Message();
+            Button bt = sender as Button;
+            string idmessage = bt.ClassId;
+            message.IdMessage = idmessage;
+            MessagingCenter.Send(this, "sup", message);
+        }
         public ForumDetailPage(ForumDetailViewModels viewModel)
         {
 
@@ -40,8 +50,11 @@ namespace MasterCodeMobile.Views
         {
             base.OnAppearing();
             viewModels.LoadMessagesCommand.Execute(null);
-        }
+            
 
+          
+        }
+        
         public void PostMessagesAsync(Object sender ,EventArgs e)
         {
             Utilisateur utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
@@ -52,6 +65,7 @@ namespace MasterCodeMobile.Views
             message.DatePublication = DateTime.Now.ToLongDateString();
             message.IdMessageParent = null;
             message.IdStatut = "1";
+
             //message.Id = Guid.NewGuid().ToString();
             if (commentaire.Text != null)
             {

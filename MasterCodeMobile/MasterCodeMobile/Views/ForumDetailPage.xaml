@@ -14,7 +14,7 @@
                     
 
                    
-                    <ListView ItemsSource="{Binding messagesForum}"
+                    <ListView x:Name="listView1"   ItemsSource="{Binding messagesForum}"
                  SelectedItem="{Binding YourSelectedItem, Mode=TwoWay}" HasUnevenRows="True"  Grid.Row="1" Grid.ColumnSpan="2" IsPullToRefreshEnabled="True">
                         
                         <ListView.Header BackgroundColor="black" Padding="2,2,2,2" HasUnevenRows="True">
@@ -25,10 +25,10 @@
                         <ListView.ItemTemplate  >
                             
                             <DataTemplate >
-                                
-                                <ViewCell >
-                                    
-                                    <ViewCell.View >
+
+                                <ViewCell Height="300">
+
+                                    <ViewCell.View>
                                         
                                         <StackLayout  Margin="20,0,20,20">
 
@@ -39,6 +39,7 @@
                                             
                                             <Label Text="{Binding PseudoUtilisateur}" HorizontalOptions="End"/>
                                             <Label Text="{Binding DatePublication}" TextColor="LightGray" FontSize="Small" HorizontalOptions="End"/>
+                                            <Button x:Name="btnsup"  HorizontalOptions="End" HeightRequest="10" WidthRequest="10" Margin="50"  Clicked="supMessage" ClassId="{Binding IdMessage}" Text="supprimer"/>
                                         </StackLayout>
                                    
                                     </ViewCell.View>

@@ -27,6 +27,6 @@ namespace MasterCodeMobile.Services
         Task<Utilisateur> GetProfil(string IdUtilisateur);
         Task<bool> UpdateProfil(string pseudo, string mdp, string cheminavatar);
 
-
+        Task<bool> SupMessageAsync(string idMessage);
     }
 }

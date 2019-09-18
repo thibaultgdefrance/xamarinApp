@@ -13,5 +13,6 @@ namespace MasterCodeMobile.Models
         public string TexteMessage { get; set; }
         public string CheminAvatar { get; set; }
         public Utilisateur Utilisateur { get; set; }
+        public bool UtilisateurFinal { get; set; }
     }
 }

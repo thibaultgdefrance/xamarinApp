@@ -47,7 +47,7 @@ namespace MasterCodeMobile.Views
                 viewModel.LoadForumsCommand.Execute(null);
             
             Utilisateur utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
-            lbtest.Text ="Bonjour"+utilisateur.Pseudo;
+            lbtest.Text ="Bonjour "+utilisateur.Pseudo;
             imgAvatar.Source =utilisateur.CheminAvatar;
         }
 

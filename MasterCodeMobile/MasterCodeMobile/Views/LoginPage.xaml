@@ -12,12 +12,12 @@
             <Label Text="Login"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
-            <Entry Placeholder="email" PlaceholderColor="LightGray" VerticalOptions="Center" WidthRequest="75" TextColor="Black" x:Name="EmailConnexion" Text="{Binding Utilisateur.Email}"/>
-            <Entry Placeholder="Password" PlaceholderColor="LightGray" IsPassword="True" VerticalOptions="Center" TextColor="Black" x:Name="MDPConnexion" Text="{Binding Utilisateur.MotDePasse}"/>
+            <Entry Placeholder="email" PlaceholderColor="LightGray" VerticalOptions="Center" WidthRequest="75" TextColor="Black" x:Name="EmailConnexion" Text="{Binding Utilisateur.Email}" Margin="50,0,50,0"/>
+            <Entry Placeholder="Password" PlaceholderColor="LightGray" IsPassword="True" VerticalOptions="Center" TextColor="Black" x:Name="MDPConnexion" Text="{Binding Utilisateur.MotDePasse}" Margin="50,0,50,0"/>
             
             <ActivityIndicator />
-            
-            <Label  x:Name="infoConnexion" TextColor="red"/>
+
+            <Label  x:Name="infoConnexion" TextColor="red" Margin="50,0,50,0" HorizontalOptions="Center"/>
             <Button Text="Se connecter" BackgroundColor="#99ff5e" Clicked="Connexion_Clicked" CornerRadius="20" Margin="80,0,80,20"/>
             <Button Text="Mot de passe oublié" Margin="80,0,80,20" CornerRadius="20"/>
             <Button Text="S'inscrire" Clicked="Redirect_Clicked" Margin="80,0,80,20" CornerRadius="20"/>

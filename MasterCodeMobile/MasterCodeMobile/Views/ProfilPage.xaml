@@ -18,33 +18,32 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Image  Grid.Column="0" Grid.RowSpan="2" HorizontalOptions="Start" x:Name="ImageUtilisateur"/>
-                    <Label Text="popularité:" HorizontalOptions="Start" Grid.Column="1" Margin="0,50,0,0"/>
-                    <Label Text="nb commentaire(s):" HorizontalOptions="Start" Grid.Column="1" Grid.Row="1" Margin="0,50,0,0"/>
+                    <Image  Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="Center" x:Name="ImageUtilisateur"/>
+                    
                 </Grid>
 
 
                 <StackLayout Margin="10,0,5,10" WidthRequest="150" HeightRequest="150">
+
+                    <Label Text="Avatar" Margin="50,0,50,0"/>
                     
-                    <Label Text="Avatar" />
-                    
-                    <Entry Placeholder="chemin de l'avatar" x:Name="CheminAvatar"/>
-                    
-                    <Label Text="Pseudo" x:Name="labelPseudo"/>
-                    
-                    <Entry Placeholder="entrez votre pseudo" x:Name="Pseudo" />
+                    <Entry Placeholder="chemin de l'avatar" x:Name="CheminAvatar" Margin="50,0,50,0"/>
+
+                    <Label Text="Pseudo" x:Name="labelPseudo" Margin="50,0,50,0"/>
+
+                    <Entry Placeholder="entrez votre pseudo" x:Name="Pseudo" Margin="50,0,50,0"/>
                     
                 </StackLayout>
-                <StackLayout Margin="20,0,5,20">
-                    <Label Text="mot de passe" x:Name="labelMDP"/>
+                <StackLayout Margin="10,0,5,10">
+                    <Label Text="mot de passe" x:Name="labelMDP" Margin="50,0,50,0"/>
 
-                    <Entry Placeholder="entrez votre mot de passe" x:Name="MDP" />
+                    <Entry Placeholder="entrez votre mot de passe" x:Name="MDP" Margin="50,0,50,0"/>
 
 
 
                     <!--<Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white" x:Name="btnValidation" Clicked="ModifierProfilAsync"/>-->
 
-                    <Button Text="valider profil" Clicked="ModifierProfilAsync" VerticalOptions="End" BackgroundColor="#99ff5e" TextColor="white" CornerRadius="20"/>
+                    <Button Text="valider profil" Clicked="ModifierProfilAsync" VerticalOptions="End" BackgroundColor="#99ff5e" TextColor="white" CornerRadius="20" Margin="50,0,50,0"/>
 
 
                 </StackLayout>

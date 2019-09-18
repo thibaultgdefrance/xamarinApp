@@ -234,6 +234,21 @@ namespace MasterCodeMobile.Services
 
         }
 
+        public async Task<bool> SupMessageAsync(string idMessage)
+        {
+            try
+            {
+                await htc.DeleteAsync("http://10.115.145.48/api/Utilisateurs/" + idMessage);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            
+        }
+
         public async Task<Message> PostMessageAsync(Message message, string token)
         {
            //Message message2 = new Message();

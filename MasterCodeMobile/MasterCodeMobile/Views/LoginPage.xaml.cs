@@ -48,7 +48,7 @@ namespace MasterCodeMobile.Views
             {
                 infoConnexion.Text = "Le mot de passe ou l'email sont éronés";
             }
-           
+            
         }
         public void Redirect_Clicked(object sender, EventArgs e)
         {
