@@ -30,14 +30,16 @@ namespace MasterCodeMobile.Views
             List<MessageForum> messagesForum = new List<MessageForum>();
         }
 
+        
 
         public void supMessage(Object sender, EventArgs e)
         {
-            Message message = new Message();
+            MessageForum message = new MessageForum();
             Button bt = sender as Button;
             string idmessage = bt.ClassId;
             message.IdMessage = idmessage;
-            MessagingCenter.Send(this, "sup", message);
+            MessagingCenter.Send(this, "sup", idmessage);
+            Navigation.PushAsync(new ListeForumsPage());
         }
         public ForumDetailPage(ForumDetailViewModels viewModel)
         {
@@ -50,6 +52,7 @@ namespace MasterCodeMobile.Views
         {
             base.OnAppearing();
             viewModels.LoadMessagesCommand.Execute(null);
+            
             
 
           

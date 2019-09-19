@@ -133,7 +133,7 @@ namespace MasterCodeMobile.Services
         }*/
         public  async Task<IEnumerable<MessageForum>> GetForumDetailAsync(string idforum, bool forcedRefresh = false)
         {
-            
+            Utilisateur utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
             HttpClient htcT = new HttpClient();
             string idf = idforum.Replace("\"", "");
             Application.Current.Properties["IdForum"] = idforum;
@@ -143,8 +143,18 @@ namespace MasterCodeMobile.Services
 
 
             messagesForum = JsonConvert.DeserializeObject<List<MessageForum>>(reponse);
-            
 
+            foreach (var item in messagesForum)
+            {
+                if (item.IdAuteur==utilisateur.IdUtilisateur)
+                {
+                    item.droit = true;
+                }
+                else
+                {
+                    item.droit = false;
+                }
+            }
           
 
             return messagesForum.AsEnumerable();
@@ -238,7 +248,7 @@ namespace MasterCodeMobile.Services
         {
             try
             {
-                await htc.DeleteAsync("http://10.115.145.48/api/Utilisateurs/" + idMessage);
+                await htc.DeleteAsync("http://10.115.145.48/api/Messages/" + idMessage);
                 return true;
             }
             catch (Exception)

@@ -64,11 +64,11 @@ namespace MasterCodeMobile.ViewModels
             {
                 IsBusy = false;
             }
-            MessagingCenter.Subscribe<ForumDetailPage, Message>(this, "sup", async (obj, message) =>
+            MessagingCenter.Subscribe<ForumDetailPage, string>(this, "sup", async (obj, idmessage) =>
                {
-                   Message message1 = new Message();
-                   message1.IdMessage = message.IdMessage;
-                    await DataStore.SupMessageAsync(message1.IdMessage);
+                   /*MessageForum message1 = new MessageForum();
+                   message1.IdMessage = message.IdMessage;*/
+                    await DataStore.SupMessageAsync(idmessage);
                    //
                });
         }

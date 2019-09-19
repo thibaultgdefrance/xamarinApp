@@ -39,7 +39,7 @@
                                             
                                             <Label Text="{Binding PseudoUtilisateur}" HorizontalOptions="End"/>
                                             <Label Text="{Binding DatePublication}" TextColor="LightGray" FontSize="Small" HorizontalOptions="End"/>
-                                            <Button x:Name="btnsup"  HorizontalOptions="End" HeightRequest="10" WidthRequest="10" Margin="50"  Clicked="supMessage" ClassId="{Binding IdMessage}" Text="supprimer"/>
+                                            <Button x:Name="btnsup"  HorizontalOptions="End"   Clicked="supMessage" ClassId="{Binding IdMessage}" Text="supprimer" IsVisible="{Binding droit}"/>
                                         </StackLayout>
                                    
                                     </ViewCell.View>
