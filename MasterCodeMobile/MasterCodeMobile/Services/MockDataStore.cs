@@ -332,5 +332,9 @@ namespace MasterCodeMobile.Services
             return true;
         }
 
+       public async void uploadAvatar()
+        {
+            
+        }
     }
 }

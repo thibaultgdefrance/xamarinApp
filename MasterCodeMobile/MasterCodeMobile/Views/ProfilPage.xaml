@@ -19,7 +19,7 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Image  Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="Center" x:Name="ImageUtilisateur"/>
-                    
+                    <Button Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="End" VerticalOptions="End" Text="+" HeightRequest="50" WidthRequest="50" FontSize="Large" Clicked="uploadAvatar" />
                 </Grid>
 
 
@@ -43,11 +43,17 @@
 
                     <!--<Button Text="Valider profil" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="#99ff5e" TextColor="white" x:Name="btnValidation" Clicked="ModifierProfilAsync"/>-->
 
-                    <Button Text="valider profil" Clicked="ModifierProfilAsync" VerticalOptions="End" BackgroundColor="#99ff5e" TextColor="white" CornerRadius="20" Margin="50,0,50,0"/>
+                    <Button Text="valider profil" Clicked="ModifierProfilAsync" VerticalOptions="End" BackgroundColor="#99ff5e" TextColor="white" CornerRadius="20" Margin="50,0,50,0" />
 
 
                 </StackLayout>
                
+                <StackLayout>
+                    
+                    <Label Text="" x:Name="LocalPathLabel"/>
+                    
+                    <Label Text="" x:Name="RemotePathLabel"/>
+                </StackLayout>
 
             </StackLayout>
 

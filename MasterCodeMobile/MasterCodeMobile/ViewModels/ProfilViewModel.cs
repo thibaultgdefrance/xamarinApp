@@ -22,7 +22,7 @@ namespace MasterCodeMobile.ViewModels
 
             });*/
             LoadProfilCommand = new Command(async () => await ExecuteLoadProfilCommand());
-
+           
 
         }
         public async Task ExecuteLoadProfilCommand()
@@ -53,5 +53,13 @@ namespace MasterCodeMobile.ViewModels
             }
         }
 
+        
+        }
+
+
+
+        
+
     }
-}
+    
+

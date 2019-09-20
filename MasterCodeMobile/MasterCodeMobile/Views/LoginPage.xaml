@@ -12,8 +12,8 @@
             <Label Text="Login"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
-            <Entry Placeholder="email" PlaceholderColor="LightGray" VerticalOptions="Center" WidthRequest="75" TextColor="Black" x:Name="EmailConnexion" Text="{Binding Utilisateur.Email}" Margin="50,0,50,0"/>
-            <Entry Placeholder="Password" PlaceholderColor="LightGray" IsPassword="True" VerticalOptions="Center" TextColor="Black" x:Name="MDPConnexion" Text="{Binding Utilisateur.MotDePasse}" Margin="50,0,50,0"/>
+            <Entry Placeholder="email" PlaceholderColor="LightGray" VerticalOptions="Center" WidthRequest="75" TextColor="Black" x:Name="EmailConnexion" Text="{Binding Utilisateur.Email}" Margin="50,0,50,0" />
+            <Entry Placeholder="Password" PlaceholderColor="LightGray" IsPassword="True" VerticalOptions="Center" TextColor="Black" x:Name="MDPConnexion" Text="{Binding Utilisateur.MotDePasse}" Margin="50,0,50,0" />
             
             <ActivityIndicator />
 

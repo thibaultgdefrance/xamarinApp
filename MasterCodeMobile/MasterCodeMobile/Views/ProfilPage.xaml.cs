@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,7 +16,7 @@ namespace MasterCodeMobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilPage : ContentPage
     {
-
+        public MediaFile _mediaFile;
         ProfilViewModel viewModel;
        Utilisateur utilisateur { get; set; }
         
@@ -38,6 +38,48 @@ namespace MasterCodeMobile.Views
             utilisateur.MotDePasse = MDP.Text;
             MessagingCenter.Send(this, "ModifierProfil", utilisateur);
         }
+
+        public async void uploadAvatar(Object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("No PickPhoto", " >:° No PickPhoto.", "Ok");
+                return;
+            }
+
+            _mediaFile = await CrossMedia.Current.PickPhotoAsync();
+            if (_mediaFile==null)
+            {
+                return;
+            }
+            LocalPathLabel.Text = _mediaFile.Path;
+            ImageUtilisateur.Source = ImageSource.FromStream(() =>
+              {
+                  return _mediaFile.GetStream();
+              }
+
+
+            );
+        }
+
+
+
+        public async void uploadClicked()
+        {
+            Utilisateur utilisateur = Application.Current.Properties["utilisateur"] as Utilisateur;
+            var content = new MultipartFormDataContent();
+            content.Add(new StreamContent(_mediaFile.GetStream()),
+                "\"file\"",
+                $"\"{_mediaFile.Path}\""
+                );
+            var httpClient = new HttpClient();
+            var uploadAdresse = "http://10.115.145.48/api/Utilisateurs/"+utilisateur.IdUtilisateur+"?croquette="+true;
+            var httpReponseMessage = await httpClient.PostAsync(uploadAdresse,content);
+            RemotePathLabel.Text = await httpReponseMessage.Content.ReadAsStringAsync();
+        }
+
+
         protected override void OnAppearing()
         {
            
@@ -45,7 +87,7 @@ namespace MasterCodeMobile.Views
 
             Pseudo.Text = utilisateur.Pseudo;
             MDP.Text = utilisateur.MotDePasse;
-            
+            CheminAvatar.Text = utilisateur.CheminAvatar;
             /*if (utilisateur.CheminAvatar=="default")
             {
                 CheminAvatar.Text = "iconeutilisateur.jpg";

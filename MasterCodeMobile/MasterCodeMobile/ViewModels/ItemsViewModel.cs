@@ -41,7 +41,9 @@ namespace MasterCodeMobile.ViewModels
             {
                 var _User = user as Utilisateur;
                 Utilisateur = _User;
+
                 await DataStore.Login(_User);
+                
             });
 
 
