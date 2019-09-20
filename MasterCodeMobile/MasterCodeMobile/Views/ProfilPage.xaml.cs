@@ -61,6 +61,7 @@ namespace MasterCodeMobile.Views
 
 
             );
+            uploadClicked();
         }
 
 
@@ -77,6 +78,8 @@ namespace MasterCodeMobile.Views
             var uploadAdresse = "http://10.115.145.48/api/Utilisateurs/"+utilisateur.IdUtilisateur+"?croquette="+true;
             var httpReponseMessage = await httpClient.PostAsync(uploadAdresse,content);
             RemotePathLabel.Text = await httpReponseMessage.Content.ReadAsStringAsync();
+            //CheminAvatar.Text= await httpReponseMessage.Content.ReadAsStringAsync();
+            CheminAvatar.Text = _mediaFile.Path;
         }
 
 
