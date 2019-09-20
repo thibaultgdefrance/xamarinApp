@@ -75,7 +75,7 @@ namespace MasterCodeMobile.Views
                 $"\"{_mediaFile.Path}\""
                 );
             var httpClient = new HttpClient();
-            var uploadAdresse = "http://10.115.145.48/api/Utilisateurs/"+utilisateur.IdUtilisateur+"?croquette="+true;
+            var uploadAdresse = "http://10.115.145.48/api/Files/Upload";
             var httpReponseMessage = await httpClient.PostAsync(uploadAdresse,content);
             RemotePathLabel.Text = await httpReponseMessage.Content.ReadAsStringAsync();
             //CheminAvatar.Text= await httpReponseMessage.Content.ReadAsStringAsync();
